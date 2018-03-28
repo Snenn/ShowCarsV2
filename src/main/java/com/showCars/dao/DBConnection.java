@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static final String URL_DB =
-            "mysql://b0d44ae03093be:a254d195@us-cdbr-iron-east-05.cleardb.net/heroku_cfe833d95e08d49?reconnect=true";
+            "mysql://bdee5f193ec11c:ac321792@us-cdbr-iron-east-05.cleardb.net/heroku_555437bd0a94962?reconnect=true";
 
     public static Connection getConnection() throws URISyntaxException, SQLException {
         URI dbUri = new URI(System.getenv("URL_DB"));
