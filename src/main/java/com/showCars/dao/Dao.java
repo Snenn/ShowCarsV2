@@ -31,7 +31,9 @@ public class Dao implements IDao {
              ResultSet rs = ps.executeQuery()) {
 
             cars = (List<Car>) rs;
-        } catch (SQLException | URISyntaxException e) {
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
 
