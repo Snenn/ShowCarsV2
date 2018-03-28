@@ -9,16 +9,18 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static final String URL_DB =
-            "mysql://bdee5f193ec11c:ac321792@us-cdbr-iron-east-05.cleardb.net/heroku_555437bd0a94962?reconnect=true";
+            "";
 
     public static Connection getConnection() throws URISyntaxException, SQLException {
         URI dbUri = new URI(System.getenv("URL_DB"));
 
-        String username = dbUri.getUserInfo().split(":")[0];
-        String password = dbUri.getUserInfo().split(":")[1];
+        String username = "bdee5f193ec11c";
+        String password = "ac321792";
         String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
 
-        return DriverManager.getConnection(dbUrl, username, password);
+        return DriverManager.getConnection(
+                "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_555437bd0a94962?reconnect=true",
+                username, password);
     }
 
 
