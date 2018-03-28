@@ -12,14 +12,13 @@ public class DBConnection {
             "";
 
     public static Connection getConnection() throws URISyntaxException, SQLException {
-        URI dbUri = new URI(System.getenv("URL_DB"));
+        URI dbUri = new URI(System.getenv("jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_555437bd0a94962?reconnect=true"));
 
         String username = "bdee5f193ec11c";
         String password = "ac321792";
-        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
 
         return DriverManager.getConnection(
-                "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_555437bd0a94962?reconnect=true",
+                String.valueOf(dbUri),
                 username, password);
     }
 
