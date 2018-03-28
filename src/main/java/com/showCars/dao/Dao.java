@@ -26,13 +26,15 @@ public class Dao implements IDao {
 
     public List<Car> getCars() {
         List<Car> cars = null;
-        try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = createPreparedStatement(con);
-             ResultSet rs = ps.executeQuery()) {
+        try {
+            try (Connection con = DBConnection.getConnection();
+                 PreparedStatement ps = createPreparedStatement(con);
+                 ResultSet rs = ps.executeQuery()) {
 
-            cars = (List<Car>) rs;
-        } catch (SQLException e) {
-            e.printStackTrace();
+                cars = (List<Car>) rs;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
