@@ -24,20 +24,13 @@ public class Dao implements IDao {
         return dao;
     }
 
-    public List<Car> getCars() {
+    public List<Car> getCars() throws URISyntaxException, SQLException {
         List<Car> cars = null;
-        try {
-            try (Connection con = DBConnection.getConnection();
-                 PreparedStatement ps = createPreparedStatement(con);
-                 ResultSet rs = ps.executeQuery()) {
+        Connection con = DBConnection.getConnection();
+        PreparedStatement ps = createPreparedStatement(con);
+        ResultSet rs = ps.executeQuery();
 
-                cars = (List<Car>) rs;
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+        cars = (List<Car>) rs;
 
         return cars;
     }
