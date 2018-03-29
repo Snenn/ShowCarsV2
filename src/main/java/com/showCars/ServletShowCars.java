@@ -35,7 +35,6 @@ public class ServletShowCars extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        out.write("hello heroku".getBytes());
         for (int i = 0; i < cars.size() ; i++) {
             out.println(String.valueOf(cars.get(i)));
         }
