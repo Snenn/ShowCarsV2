@@ -28,7 +28,7 @@ public class Dao implements IDao {
         Connection con = DBConnection.getConnection();
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
-        List<Car> cars = Collections.EMPTY_LIST;
+        List<Car> cars = new ArrayList();
         while (rs.next()) {
             Car car = new Car();
             car.setId(rs.getInt("id"));
