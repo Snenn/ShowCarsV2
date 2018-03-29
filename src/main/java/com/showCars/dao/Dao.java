@@ -31,6 +31,7 @@ public class Dao implements IDao {
         while (rs.next()) {
             String s = rs.getString("model");
             System.out.println(s);
+            System.out.println(cars);
             cars = cars+s;
         }
         return cars;
