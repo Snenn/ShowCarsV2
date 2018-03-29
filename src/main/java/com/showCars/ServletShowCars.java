@@ -35,6 +35,7 @@ public class ServletShowCars extends HttpServlet {
         out.println(String.valueOf(cars));
         out.flush();
         out.close();
+
     }
 
 }
