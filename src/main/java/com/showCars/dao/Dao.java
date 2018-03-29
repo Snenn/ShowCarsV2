@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Dao implements IDao {
@@ -28,7 +28,7 @@ public class Dao implements IDao {
         if (con!=null) System.out.println("connection good");
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
-        List<String> cars = Arrays.asList();
+        List<String> cars = Collections.emptyList();
         while(rs.next()){
             System.out.println("item");
             System.out.println("model:" +rs.getString("model"));
