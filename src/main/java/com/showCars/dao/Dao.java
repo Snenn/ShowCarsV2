@@ -27,11 +27,11 @@ public class Dao implements IDao {
         if (con != null) System.out.println("connection good");
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
-        String cars = new String();
+        String cars = "cars: ";
         while (rs.next()) {
             String s = rs.getString("model");
             System.out.println(s);
-            cars.concat("; "+s);
+            cars.concat(s);
         }
         return cars;
     }
