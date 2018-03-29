@@ -34,7 +34,7 @@ public class ServletShowCars extends HttpServlet {
             e.printStackTrace();
         }
         out.write("hello heroku".getBytes());
-        out.write(Integer.parseInt(cars));
+        out.write(cars.getBytes());
         out.flush();
         out.close();
 
