@@ -2,6 +2,7 @@ package com.showCars;
 
 
 import com.showCars.dao.Dao;
+import com.showCars.pojos.Car;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(
         name = "MyServlet",
@@ -23,18 +26,17 @@ public class ServletShowCars extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
-        String cars = new String();
+        List<Car> cars = new ArrayList<>();
         try {
-            System.out.println("Cars servlet before: "+cars);
             cars = Dao.getDAO().getCars();
-            System.out.println("Cars servlet: "+cars);
+            System.out.println(cars);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         out.write("hello heroku".getBytes());
-        out.write(cars.getBytes());
+        out.write(Integer.parseInt(cars.toString()));
         out.flush();
         out.close();
 
