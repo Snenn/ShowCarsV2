@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Dao implements IDao {
@@ -23,12 +23,12 @@ public class Dao implements IDao {
         return dao;
     }
 
-    public List<String> getCars() throws URISyntaxException, SQLException {
+    public ArrayList<String> getCars() throws URISyntaxException, SQLException {
         Connection con = DBConnection.getConnection();
         if (con!=null) System.out.println("connection good");
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
-        List<String> cars = Collections.emptyList();
+        ArrayList<String> cars = new ArrayList<>();
         while(rs.next()){
             System.out.println("item");
             System.out.println("model:" +rs.getString("model"));
