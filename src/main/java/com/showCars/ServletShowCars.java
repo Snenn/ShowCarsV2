@@ -2,7 +2,6 @@ package com.showCars;
 
 
 import com.showCars.dao.Dao;
-import com.showCars.pojos.Car;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -25,7 +24,7 @@ public class ServletShowCars extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
-        List<Car> cars = null;
+        List<String> cars = null;
         try {
             cars = Dao.getDAO().getCars();
         } catch (URISyntaxException e) {
