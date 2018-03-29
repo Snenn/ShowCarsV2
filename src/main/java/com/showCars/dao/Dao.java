@@ -25,8 +25,10 @@ public class Dao implements IDao {
     public List<String> getCars() throws URISyntaxException, SQLException {
         List<String> cars = null;
         Connection con = DBConnection.getConnection();
+        if (con!=null) System.out.println("connection good");
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
+        System.out.println("rs: "+rs);
         while(rs.next()){
             cars.add(rs.getString("model"));
             System.out.println(rs.getString("model"));
