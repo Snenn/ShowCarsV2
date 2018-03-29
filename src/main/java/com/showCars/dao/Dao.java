@@ -28,13 +28,13 @@ public class Dao implements IDao {
         Connection con = DBConnection.getConnection();
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
-        List<Car> cars = Collections.emptyList();
+        List<Car> cars = Collections.EMPTY_LIST;
         while (rs.next()) {
             Car car = new Car();
             car.setId(rs.getInt("id"));
             car.setModel(rs.getString("model"));
             car.setColor(rs.getString("color"));
-            System.out.println(car+ "   cars:  "+car);
+            System.out.println(car+ "   cars:  "+cars);
             cars.add(car);
         }
         return cars;
