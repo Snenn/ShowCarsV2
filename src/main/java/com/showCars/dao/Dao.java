@@ -32,7 +32,7 @@ public class Dao implements IDao {
             String s = rs.getString("model");
             System.out.println(s);
             System.out.println(cars);
-            cars = cars+s;
+            cars = cars+s+", ";
         }
         return cars;
     }
