@@ -30,6 +30,7 @@ public class Dao implements IDao {
         String cars = new String();
         while (rs.next()) {
             String s = rs.getString("model");
+            System.out.println(s);
             cars.concat("; "+s);
         }
         return cars;
