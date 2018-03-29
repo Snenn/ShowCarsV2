@@ -30,8 +30,8 @@ public class Dao implements IDao {
         ResultSet rs = ps.executeQuery();
         while(rs.next()){
             System.out.println("item");
-            cars.add(rs.getString("model"));
-            System.out.println(rs.getString("model"));
+//            cars.add(rs.getString("model"));
+            System.out.println("model:" +rs.getString("model"));
         }
         return cars;
     }
