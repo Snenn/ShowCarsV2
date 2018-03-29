@@ -27,7 +27,7 @@ public class Dao implements IDao {
         Connection con = DBConnection.getConnection();
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
-
+        System.out.println(cars);
         while(rs.next()){
             cars.add(rs.getString(1));
         }
@@ -38,6 +38,7 @@ public class Dao implements IDao {
     private PreparedStatement createPreparedStatement(Connection con) throws SQLException {
         String sql = "SELECT * FROM car";
         PreparedStatement ps = con.prepareStatement(sql);
+        System.out.println(ps);
         return ps;
     }
 
