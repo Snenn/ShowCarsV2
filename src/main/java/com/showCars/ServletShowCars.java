@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 @WebServlet(
         name = "MyServlet",
@@ -24,9 +24,9 @@ public class ServletShowCars extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
-        List<String> cars = null;
+        ArrayList<String> cars = null;
         try {
-            cars = Dao.getDAO().getCars();
+            cars = (ArrayList<String>) Dao.getDAO().getCars();
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (SQLException e) {
