@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,7 +27,7 @@ public class ServletShowCars extends HttpServlet {
         ServletOutputStream out = resp.getOutputStream();
         List<String> cars = Arrays.asList();
         try {
-            cars = (ArrayList<String>) Dao.getDAO().getCars();
+            cars = Dao.getDAO().getCars();
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (SQLException e) {
