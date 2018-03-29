@@ -24,7 +24,7 @@ public class ServletShowCars extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
-        ArrayList<String> cars = null;
+        ArrayList<String> cars = new ArrayList<>();
         try {
             cars = (ArrayList<String>) Dao.getDAO().getCars();
         } catch (URISyntaxException e) {

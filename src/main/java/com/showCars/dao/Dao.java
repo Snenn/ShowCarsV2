@@ -28,7 +28,7 @@ public class Dao implements IDao {
         if (con!=null) System.out.println("connection good");
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
-        ArrayList<String> cars = null;
+        ArrayList<String> cars = new ArrayList<>();
         while(rs.next()){
             cars.add(rs.getString("model"));
             System.out.println("item");
