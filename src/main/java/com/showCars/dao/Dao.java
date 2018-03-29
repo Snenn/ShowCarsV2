@@ -1,7 +1,5 @@
 package com.showCars.dao;
 
-import com.showCars.pojos.Car;
-
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,14 +22,15 @@ public class Dao implements IDao {
         return dao;
     }
 
-    public List<Car> getCars() throws URISyntaxException, SQLException {
-        List<Car> cars = null;
+    public List<String> getCars() throws URISyntaxException, SQLException {
+        List<String> cars = null;
         Connection con = DBConnection.getConnection();
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
 
-        cars = (List<Car>) rs;
-
+        while(rs.next()){
+            cars.add(rs.getString(1));
+        }
         return cars;
     }
 
