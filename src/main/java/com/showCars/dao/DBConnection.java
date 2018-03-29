@@ -12,7 +12,7 @@ public class DBConnection {
             "";
 
     public static Connection getConnection() throws URISyntaxException, SQLException {
-        URI dbUri = new URI(System.getenv("jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_555437bd0a94962"));
+        URI dbUri = new URI(System.getenv("jdbc:mysql://us-cdbr-iron-east-05.cleardb.net:3306/heroku_555437bd0a94962?reconnect=true"));
 
         String username = "bdee5f193ec11c";
         String password = "ac321792";
