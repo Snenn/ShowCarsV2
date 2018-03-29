@@ -23,7 +23,7 @@ public class ServletShowCars extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
-        String cars = null;
+        String cars = new String();
         try {
             cars = Dao.getDAO().getCars();
         } catch (URISyntaxException e) {
