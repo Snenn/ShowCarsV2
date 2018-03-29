@@ -34,7 +34,6 @@ public class Dao implements IDao {
             car.setId(rs.getInt("id"));
             car.setModel(rs.getString("model"));
             car.setColor(rs.getString("color"));
-            System.out.println(car+ "   cars:  "+cars);
             cars.add(car);
         }
         return cars;
