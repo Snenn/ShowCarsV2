@@ -25,7 +25,9 @@ public class ServletShowCars extends HttpServlet {
         ServletOutputStream out = resp.getOutputStream();
         String cars = new String();
         try {
+            System.out.println("Cars servlet before: "+cars);
             cars = Dao.getDAO().getCars();
+            System.out.println("Cars servlet: "+cars);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (SQLException e) {
