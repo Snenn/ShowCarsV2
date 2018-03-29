@@ -22,16 +22,14 @@ public class Dao implements IDao {
         return dao;
     }
 
-    public List<String> getCars() throws URISyntaxException, SQLException {
+    public String getCars() throws URISyntaxException, SQLException {
         Connection con = DBConnection.getConnection();
-        if (con!=null) System.out.println("connection good");
+        if (con != null) System.out.println("connection good");
         PreparedStatement ps = createPreparedStatement(con);
         ResultSet rs = ps.executeQuery();
-        List<String> cars = Collections.emptyList();
-        while(rs.next()){
-            System.out.println("item");
-            System.out.println("model:" +rs.getString("model"));
-            cars.add(rs.getString("model"));
+        String cars = null;
+        while (rs.next()) {
+            cars.concat("; "+rs.getString("model"));
         }
         return cars;
     }
