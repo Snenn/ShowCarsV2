@@ -1,11 +1,15 @@
 package com.showCars.dao;
 
-import java.util.List;
 
-public interface IDao<Type> {
+import java.io.Serializable;
 
-List<Type> getAll();
+public interface IDao<TYPE> {
 
-void save(Type type);
+    void saveOrUpdate(TYPE type) throws Exception;
+
+    void delete(TYPE type) throws Exception;
+
+    TYPE get(Serializable id) throws Exception;
+
 
 }

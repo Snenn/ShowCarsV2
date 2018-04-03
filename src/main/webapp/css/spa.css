@@ -1,0 +1,19 @@
+.adverColomn {
+    float: left;
+    border-radius: 3px;
+    background-color: rgba(255, 76, 42, 0.9);
+    height: 100px;
+    margin-left: 3px;
+    margin-top: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+.adverColomnButton {
+    float: left;
+    border-radius: 10px;
+    background-color: rgba(99, 255, 255, 0.9);
+    height: 30px;
+    margin-left: 3px;
+    text-align: center;
+    vertical-align: middle;
+}
