@@ -1,5 +1,5 @@
 <html>
-<link rel="stylesheet" type="text/css" href="css/spa.css" media="all">
+<link rel="stylesheet" type="text/css" href="../../css/spa.css" media="all">
 <body>
 
 <div style="width: 1300px; height: 100px;

@@ -25,7 +25,7 @@
 		<authentication-provider user-service-ref="authService"/>
 	</authentication-manager>
 
-	<beans:bean id="authService" class="by.snenn.services.authentication.AuthenticationService"/>
-    <beans:bean id="MyAuthenticationSuccessHandler" class="by.snenn.services.authentication.MyAuthenticationSuccessHandler"/>
+	<beans:bean id="authService" class="com.showCars.services.authentication.AuthenticationService"/>
+    <beans:bean id="MyAuthenticationSuccessHandler" class="com.showCars.services.authentication.MyAuthenticationSuccessHandler"/>
 
 </beans:beans>
