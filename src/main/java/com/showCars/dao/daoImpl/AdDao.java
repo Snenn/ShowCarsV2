@@ -22,8 +22,9 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
 
     @Override
     public List<Ad> getAll() {
-        List ads = null;
+        List<Ad> ads = null;
         try {
+            System.out.println("go in dao");
             Query query = getSession().createQuery("FROM Ad ");
             ads = query.list();
             logger.info("all users:" + ads);
