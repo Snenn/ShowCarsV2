@@ -52,5 +52,8 @@
         </jsp-property-group>
     </jsp-config>
 
+    <welcome-file-list>
+        <welcome-file>views/index.jsp</welcome-file>
+    </welcome-file-list>
 
 </web-app>
