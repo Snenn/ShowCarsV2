@@ -19,7 +19,7 @@
         <property name="dataSourceClassName"  value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource" />
         <property name="dataSourceProperties">
             <props>
-                <prop key="url">jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_555437bd0a94962</prop>
+                <prop key="url">jdbc:mysql://us-cdbr-iron-east-05.cleardb.net:3306/heroku_555437bd0a94962</prop>
                 <prop key="user">bdee5f193ec11c</prop>
                 <prop key="password">ac321792</prop>
                 <prop key="useUnicode">true</prop>
