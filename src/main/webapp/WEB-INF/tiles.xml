@@ -3,8 +3,8 @@
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
-    <definition name="" template="/WEB-INF/views/index.jsp"/>
+    <definition name="home" template="/WEB-INF/views/index.jsp"/>
 
-    <definition name="/showCars" template="/WEB-INF/views/index.jsp"/>
+    <definition name="showCars" template="/WEB-INF/views/responseServlet.jsp"/>
 
 </tiles-definitions>
