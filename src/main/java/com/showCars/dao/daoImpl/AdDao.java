@@ -30,6 +30,7 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
         } catch (HibernateException e) {
             logger.error("Error get users" + e);
         }
+        System.out.println("get from bd: "+ads);
         return ads;
     }
 
