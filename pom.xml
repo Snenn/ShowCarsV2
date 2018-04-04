@@ -205,6 +205,19 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+        <!--HicariCP pool-->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>${hicariCP.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--ehcache-->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -219,6 +232,9 @@
         <mysql-driver.version>5.1.38</mysql-driver.version>
         <lombok.version>1.16.12</lombok.version>
         <tiles.version>3.0.5</tiles.version>
+        <hicariCP.version>2.5.1</hicariCP.version>
+        <ehcache.version>2.10.3</ehcache.version>
+
     </properties>
 
     <build>
@@ -245,6 +261,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
