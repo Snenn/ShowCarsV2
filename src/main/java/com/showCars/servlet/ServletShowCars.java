@@ -2,7 +2,6 @@ package com.showCars.servlet;
 
 
 import com.showCars.dao.IAdDao;
-import com.showCars.pojos.Ad;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
@@ -26,7 +25,8 @@ public class ServletShowCars extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Ad> ads = adDao.getAll();
+        System.out.println("servlet work");
+        List ads = adDao.getAll();
         System.out.println(ads);
         ServletOutputStream out = resp.getOutputStream();
         out.write("hello heroku".getBytes());

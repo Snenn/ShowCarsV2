@@ -22,7 +22,7 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
 
     @Override
     public List<Ad> getAll() {
-        List<Ad> ads = null;
+        List ads = null;
         try {
             System.out.println("go in dao");
             Query query = getSession().createQuery("FROM Ad ");
