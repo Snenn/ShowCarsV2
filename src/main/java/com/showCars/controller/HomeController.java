@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.Serializable;
 
 @Controller
-public class HomeController {
+public class HomeController implements Serializable {
 
     @RequestMapping(value = {""}, method = {RequestMethod.POST, RequestMethod.GET})
     public String homePage(ModelMap model, HttpServletRequest req, HttpSession httpSession) {
