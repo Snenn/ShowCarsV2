@@ -19,8 +19,8 @@ public class Ad {
     private int id;
     @JsonIgnore
     @JoinColumn
-    @ManyToOne(fetch = FetchType.EAGER)
-    private int idUser;
+    @ManyToOne()
+    private User user;
     @Column
     private int photo;
     @Column
@@ -34,9 +34,8 @@ public class Ad {
     @Column
     private String description;
 
-    public Ad(int id, int idUser, int photo, int price, String make, String model, int year, String description) {
-        this.id = id;
-        this.idUser = idUser;
+    public Ad(User user, int photo, int price, String make, String model, int year, String description) {
+        this.user = user;
         this.photo = photo;
         this.price = price;
         this.make = make;
@@ -45,14 +44,20 @@ public class Ad {
         this.description = description;
     }
 
-
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getPhoto() {
@@ -101,14 +106,5 @@ public class Ad {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public int getIdUser() {
-
-        return idUser;
-    }
-
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
     }
 }
