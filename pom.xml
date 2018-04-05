@@ -170,13 +170,6 @@
             <version>${spring.version}</version>
         </dependency>
         <!--End Spring-->
-        <!--lombok annotations-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
         <!--tiles-->
         <dependency>
             <groupId>org.apache.tiles</groupId>
@@ -199,29 +192,11 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.8.0</version>
         </dependency>
-        <!--log4j-->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-        <!--HicariCP pool-->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>${hicariCP.version}</version>
-            <scope>compile</scope>
-        </dependency>
         <!--ehcache-->
         <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
             <version>${ehcache.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
         </dependency>
         <!--heroku-->
         <dependency>
@@ -238,6 +213,122 @@
             <groupId>com.heroku.sdk</groupId>
             <artifactId>heroku-jdbc</artifactId>
             <version>0.1.1</version>
+        </dependency>
+
+        <!-- AspectJ-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <!-- CgLib-->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
+        <!--cobertura-->
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>cobertura-maven-plugin</artifactId>
+            <version>${cobertura.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--info-reports-plugin-->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-project-info-reports-plugin</artifactId>
+            <version>${info-reports-plugin.version}</version>
+        </dependency>
+        <!--jsp-api-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <!--jstl-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+        <!--servlet-api-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--utils-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${lang3.version}</version>
+        </dependency>
+        <!--log4j-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <!--HicariCP pool-->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>${hicariCP.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--lombok annotations-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>2.1.13</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-impl</artifactId>
+            <version>2.1.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+        <!-- EL -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-el-api</artifactId>
+            <version>8.0.8</version>
+        </dependency>
+        <!-- Tomcat 6 need this -->
+        <dependency>
+            <groupId>com.sun.el</groupId>
+            <artifactId>el-ri</artifactId>
+            <version>1.0</version>
         </dependency>
 
     </dependencies>
@@ -258,6 +349,18 @@
         <ehcache.version>2.10.3</ehcache.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <cobertura.version>2.7</cobertura.version>
+        <info-reports-plugin.version>2.9</info-reports-plugin.version>
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+        <compiler-plugin.version>3.1</compiler-plugin.version>
+        <ehcache.version>2.10.3</ehcache.version>
+        <jsp-api.version>2.0</jsp-api.version>
+        <jstl.version>1.2</jstl.version>
+        <log4j.version>1.2.17</log4j.version>
+        <lang3.version>3.0</lang3.version>
+        <dbcp.version>1.4</dbcp.version>
+        <aspectj.version>1.7.3</aspectj.version>
+        <cglib.version>3.2.4</cglib.version>
     </properties>
 
     <repositories>
