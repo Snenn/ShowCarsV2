@@ -16,6 +16,11 @@ public class HomeController {
         return "home";
     }
 
+    @RequestMapping(value = {"/"}, method = {RequestMethod.POST, RequestMethod.GET})
+    public String homePage2(ModelMap model, HttpServletRequest req, HttpSession httpSession) {
+        return "home";
+    }
+
     @RequestMapping(value = {"/showcars"}, method = {RequestMethod.POST, RequestMethod.GET})
     public String showCarsPage(ModelMap model, HttpServletRequest req, HttpSession httpSession) {
         return "showCars";
