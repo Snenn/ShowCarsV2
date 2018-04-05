@@ -12,6 +12,9 @@ import java.io.Serializable;
 @Controller
 public class HomeController implements Serializable {
 
+    private static final long serialVersionUID = 1324281204513252403L;
+
+
     @RequestMapping(value = {""}, method = {RequestMethod.POST, RequestMethod.GET})
     public String homePage(ModelMap model, HttpServletRequest req, HttpSession httpSession) {
         return "home";

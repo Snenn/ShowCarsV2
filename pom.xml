@@ -6,7 +6,6 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>ShowCarsV2 Maven Webapp</name>
-    <url>http://maven.apache.org</url>
     <dependencies>
         <!--Tomcat-->
         <dependency>
@@ -318,6 +317,12 @@
             <version>2.1</version>
         </dependency>
 
+        <!--Dbcp-->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${dbcp.version}</version>
+        </dependency>
         <!-- EL -->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
@@ -361,6 +366,7 @@
         <dbcp.version>1.4</dbcp.version>
         <aspectj.version>1.7.3</aspectj.version>
         <cglib.version>3.2.4</cglib.version>
+        <dbcp.version>1.4</dbcp.version>
     </properties>
 
     <repositories>

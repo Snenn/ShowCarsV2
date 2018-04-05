@@ -338,6 +338,8 @@
           <element id="library" level="project" name="Maven: com.sun.faces:jsf-api:2.1.13" />
           <element id="library" level="project" name="Maven: com.sun.faces:jsf-impl:2.1.13" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
           <element id="library" level="project" name="Maven: com.sun.el:el-ri:1.0" />
         </element>
       </element>
