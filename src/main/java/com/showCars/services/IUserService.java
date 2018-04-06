@@ -18,4 +18,6 @@ public interface IUserService {
 
     int getCountUsers();
 
+    List getAll ();
+
 }

@@ -56,5 +56,10 @@ public class UserService implements IUserService {
         return userDao.getCount();
     }
 
+    @Override
+    public List getAll() {
+        return userDao.getAll();
+    }
+
 
 }
