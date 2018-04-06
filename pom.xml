@@ -412,6 +412,18 @@
             <layout>default</layout>
             <url>http://repository.jboss.org/maven2</url>
         </repository>
+        <repository>
+            <id>atlassian-public</id>
+            <url>https://maven.atlassian.com/repository/public</url>
+        </repository>
+        <repository>
+            <id>org.springframework.maven.milestone</id>
+            <name>Spring Maven Milestone Repository</name>
+            <url>http://maven.springframework.org/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <build>
@@ -432,7 +444,7 @@
                                 <artifactItem>
                                     <groupId>com.github.jsimone</groupId>
                                     <artifactId>webapp-runner</artifactId>
-                                    <version>8.5.27.0</version>
+                                    <version>8.5.5.0</version>
                                     <destFileName>webapp-runner.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
