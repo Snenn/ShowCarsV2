@@ -3,7 +3,6 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link rel="stylesheet" type="text/css" href="../../css/spa.css" media="all">
-<body>
 
 <div style="width: 1300px; height: 100px;
       margin-left: 100px; margin-top: 5px; border-radius: 5px">
@@ -69,6 +68,3 @@
 
 
 <button><a href="/showCars"> Show cars!</a></button>
-
-</body>
-</html>
