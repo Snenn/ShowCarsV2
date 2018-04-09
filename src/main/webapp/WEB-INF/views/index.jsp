@@ -1,4 +1,7 @@
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link rel="stylesheet" type="text/css" href="../../css/spa.css" media="all">
 <body>
 
@@ -7,7 +10,7 @@
     <div style="float: left; width: 900px; height: 100px; margin-top: 5px">
         <div style="" >
             <div style="float: right; width: 300px; height: 40px;text-align: center; font-size: xx-large; font: 'Franklin Gothic Book'; ">PRE - OWNED<br>CARS</div>
-            <img style="align-content: center; width: 600px; height: 80px" src="pictures/header.jpg">
+            <img style="align-content: center; width: 600px; height: 80px" src="<c:url var="header" value="/resources/pictures/header.jpg"/>">
         </div>
     </div>
     <div style="float: right; width: 400px; height: 100px; background-color: rgba(255,255,255,0.9);">
