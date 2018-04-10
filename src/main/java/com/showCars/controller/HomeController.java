@@ -38,4 +38,9 @@ public class HomeController implements Serializable {
         model.addAttribute("users",users);
         return "showCars";
     }
+
+    @RequestMapping(value = {"/signUp"}, method = {RequestMethod.POST, RequestMethod.GET})
+    public String signUp(ModelMap model, HttpServletRequest req, HttpSession httpSession) {
+        return "signUp";
+    }
 }

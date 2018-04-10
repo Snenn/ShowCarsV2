@@ -7,4 +7,6 @@
 
     <definition name="showCars" template="/WEB-INF/views/responseServlet.jsp"/>
 
+    <definition name="signUp" template="/WEB-INF/views/signUp.jsp"/>
+
 </tiles-definitions>
