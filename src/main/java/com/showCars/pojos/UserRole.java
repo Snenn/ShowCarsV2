@@ -3,8 +3,11 @@ package com.showCars.pojos;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +17,7 @@ import java.util.List;
 @EqualsAndHashCode(exclude = "users")
 @Entity
 @Table(name = "USER_ROLE")
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class UserRole implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

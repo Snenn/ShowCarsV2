@@ -8,12 +8,13 @@
              http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
 	<http auto-config="true">
-		<intercept-url pattern="/" access="permitAll"/>
-		<intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/user/**"  access="hasAnyRole('ROLE_USER')" />
+		<intercept-url pattern="/**" access="permitAll"/>
+        <intercept-url pattern="/" access="permitAll"/>
+        <!--<intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')" />-->
+		<!--<intercept-url pattern="/user/**"  access="hasAnyRole('ROLE_USER')" />-->
 
 		<form-login login-processing-url="/j_spring_security_check"
-					login-page="/login"
+					login-page="/"
 					username-parameter="j_username"
 					password-parameter="j_password"
 					authentication-failure-url="/errorLogin"

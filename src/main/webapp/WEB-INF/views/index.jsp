@@ -1,12 +1,13 @@
-<html>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="tiles"   uri="http://tiles.apache.org/tags-tiles" %>
-<%@ taglib prefix="spring"  uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="sec"     uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="e" uri="http://www.springframework.org/tags" %>
 <e:url value="/j_spring_security_check" var="loginUrl" />
+<script src="http://code.jquery.com/jquery-1.10.2.js"
+        type="text/javascript"></script>
+<script src="js/app-ajax.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="../../css/spa.css" media="all">
 <head>
     <title>Pre-owned cars</title>
@@ -30,11 +31,12 @@
                 <input id="j_password" name="j_password" type="password" style="margin-left: 20px; margin-top: 10px"
                        placeholder="password">
                 <button type="submit" style="margin-left: 70px; margin-top: 10px">login</button>
+                <button style="width: 70px; height: 70px"><a href="/logout"> logout</a></button>
             </form>
         </div>
         <div style="float: left; margin-top: 40px">or</div>
         <div style="margin-top: 20px; margin-left: 300px">
-            <button style="width: 70px; height: 70px" href="/signUp">create new account</button>
+            <button style="width: 70px; height: 70px"><a href="/signUp"> create new account</a></button>
         </div>
     </div>
 </div>
@@ -77,4 +79,5 @@
 
 
 <button><a href="/showCars"> Show cars!</a></button>
+
 </html>

@@ -1,5 +1,6 @@
 package com.showCars.controller;
 
+import com.showCars.Util.Util;
 import com.showCars.pojos.User;
 import com.showCars.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,10 @@ public class HomeController implements Serializable {
 
     @RequestMapping(value = {"/"}, method = {RequestMethod.POST, RequestMethod.GET})
     public String homePage2(ModelMap model, HttpServletRequest req, HttpSession httpSession) {
+        User user=userService.findByLogin(Util.getPrincipal());
+        System.out.println("!!!!!!!!!!!!!!!!!"+user);
+//        httpSession.setAttribute("user", user);
+
         return "home";
     }
 
