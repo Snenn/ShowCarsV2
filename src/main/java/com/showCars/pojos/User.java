@@ -40,7 +40,7 @@ public class User implements Serializable {
     @ManyToOne
     @JoinColumn
     private UserRole userRole;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Ad> ads = new ArrayList();
 
     public int getId() {
