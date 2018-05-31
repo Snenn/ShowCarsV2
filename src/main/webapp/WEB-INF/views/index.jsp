@@ -19,7 +19,7 @@
                 PRE - OWNED<br>CARS
             </div>
             <img style="align-content: center; width: 600px; height: 80px"
-                 src="<c:url var="header" value="assests/pictures/header.jpg"/>">
+                 src="<c:url value="assests/pictures/header.jpg"/>">
         </div>
     </div>
     <div style="float: right; width: 400px; height: 100px; background-color: rgba(255,255,255,0.9);">
