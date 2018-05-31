@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Collection;
 
+
 @Component
 public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
@@ -30,7 +31,7 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
     }
 
     protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
-        String targetUrl = determineTargetUrl(authentication);
+        String targetUrl = String.valueOf(determineTargetUrl(authentication));
 
         if (response.isCommitted()) {
             logger.debug(
@@ -47,7 +48,7 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
         boolean isAdmin = false;
         Collection<? extends GrantedAuthority> authorities
                 = authentication.getAuthorities();
-        for (GrantedAuthority grantedAuthority : authorities) {
+        for (GrantedAuthority grantedAuthority : authorities)
             if (grantedAuthority.getAuthority().equals("ROLE_ADMIN")) {
                 isAdmin = true;
                 break;
@@ -55,7 +56,6 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
                 isUser = true;
                 break;
             }
-        }
 
         if (isAdmin) {
             return "/showCars";
