@@ -102,7 +102,6 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.format_sql">true</prop>
                 <prop key="debug">true</prop>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="connection.isolation">2</prop>
@@ -112,19 +111,26 @@
                 <prop key="hibernate.cache.region.factory_class">
                     org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
                 </prop>
-                <prop key="net.sf.ehcache.configurationResourceName">/EHCache.xml</prop>
+                <prop key="hibernate.c3p0.timeout">2000</prop>
+                <prop key="hibernate.c3p0.max_size">10</prop>
                 <prop key="hibernate.cache.use_second_level_cache">true</prop>
                 <prop key="hibernate.cache.use_query_cache">true</prop>
 
+                <prop key="net.sf.ehcache.configurationResourceName">/EHCache.xml</prop>
 
-                <!--<prop key="hibernate.c3p0.timeout">2000</prop>-->
-                <!--<prop key="hibernate.c3p0.min_size">1</prop>-->
-                <!--<prop key="hibernate.c3p0.max_size">5</prop>-->
-                <!--<prop key="hibernate.c3p0.acquire_increment">1</prop>-->
-                <!--<prop key="hibernate.c3p0.idle_test_period">3000</prop>-->
-                <!--<prop key="hibernate.c3p0.max_statements">50</prop>-->
-                <!--<prop key="hibernate.connection.provider_class">-->
-                    <!--org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</prop>-->
+                <!--<property name="hibernate.archive.autodetection" value="class"/>-->
+                <!--<property name="hibernate.show_sql" value="true"/>-->
+                <!--<property name="hibernate.format_sql" value="true"/>-->
+                <!--<property name="hbm2ddl.auto" value="update"/>-->
+
+                <!--&lt;!&ndash; c3p0 connection pool settings &ndash;&gt;-->
+                <!--<property name="hibernate.connection.provider_class" value="org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider" />-->
+                <!--<property name="hibernate.c3p0.min_size" value="1" />-->
+                <!--<property name="hibernate.c3p0.max_size" value="5" />-->
+                <!--<property name="hibernate.c3p0.acquire_increment" value="1" />-->
+                <!--<property name="hibernate.c3p0.idle_test_period" value="3000" />-->
+                <!--<property name="hibernate.c3p0.max_statements" value="50" />-->
+
             </props>
         </property>
 
