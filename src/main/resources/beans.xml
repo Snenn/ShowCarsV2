@@ -117,13 +117,14 @@
                 <prop key="hibernate.cache.use_query_cache">true</prop>
 
 
-                <prop key="hibernate.c3p0.timeout">2000</prop>
-                <prop key="hibernate.c3p0.min_size">1</prop>
-                <prop key="hibernate.c3p0.max_size">5</prop>
-                <prop key="hibernate.c3p0.acquire_increment">1</prop>
-                <prop key="hibernate.c3p0.idle_test_period">3000</prop>
-                <prop key="hibernate.c3p0.max_statements">50</prop>
-                <prop key="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</prop>
+                <!--<prop key="hibernate.c3p0.timeout">2000</prop>-->
+                <!--<prop key="hibernate.c3p0.min_size">1</prop>-->
+                <!--<prop key="hibernate.c3p0.max_size">5</prop>-->
+                <!--<prop key="hibernate.c3p0.acquire_increment">1</prop>-->
+                <!--<prop key="hibernate.c3p0.idle_test_period">3000</prop>-->
+                <!--<prop key="hibernate.c3p0.max_statements">50</prop>-->
+                <!--<prop key="hibernate.connection.provider_class">-->
+                    <!--org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</prop>-->
             </props>
         </property>
 
