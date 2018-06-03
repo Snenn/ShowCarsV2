@@ -52,6 +52,12 @@
         <property name="password" value="ac321792"/>
         <property name="initialSize" value="5"/>
         <property name="maxActive" value="10"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="true"/>
+        <property name="numTestsPerEvictionRun" value="3"/>
+        <property name="timeBetweenEvictionRunsMillis" value="1800000"/>
+        <property name="minEvictableIdleTimeMillis" value="180000"/>
+        <property name="validationQuery" value="SELECT 1"/>
     </bean>
 
     <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">-->
@@ -119,7 +125,6 @@
                 <prop key="hibernate.c3p0.max_size">100</prop>
                 <prop key="hibernate.c3p0.min_size">1</prop>
                 <prop key="hibernate.c3p0.acquire_increment">1</prop>
-
             </props>
         </property>
 
