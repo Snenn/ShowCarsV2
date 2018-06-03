@@ -114,7 +114,10 @@
                 <prop key="hibernate.cache.use_second_level_cache">true</prop>
                 <prop key="hibernate.cache.use_query_cache">true</prop>
                 <prop key="net.sf.ehcache.configurationResourceName">/EHCache.xml</prop>
-                <prop key="c3p0.timeout">1800</prop>
+                <prop key="hibernate.c3p0.timeout">1800</prop>
+                <prop key="hibernate.c3p0.max_statements">20</prop>
+                <prop key="hibernate.c3p0.max_size">10</prop>
+                <prop key="hibernate.c3p0.min_size">1</prop>
 
             </props>
         </property>
