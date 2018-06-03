@@ -12,7 +12,7 @@
 <head>
     <title>Pre-owned cars</title>
 </head>
-
+<%@ include file="header.jsp" %>
 <div style="width: 1300px; height: 30px;background-color: rgba(178,208,255,0.9); margin-left: 100px; margin-top: 5px; border-radius: 5px"></div>
 <div style="float: left; width: 310px; height: 570px"></div>
 <div style="width: 1300px; height: 570px;background-color: rgba(178,208,255,0.9); margin-left: 100px; margin-top: 5px; border-radius: 5px">
