@@ -1,3 +1,5 @@
+<e:url value="/j_spring_security_check" var="loginUrl" />
+<e:url var="logout" value="/j_spring_security_logout"/>
 <div style="width: 1300px; height: 100px;margin-left: 100px; margin-top: 5px; border-radius: 5px">
     <div style="float: left; width: 900px; height: 100px; margin-top: 5px">
         <div style="">
@@ -31,7 +33,6 @@
             <c:otherwise>
                 <sec:authorize access="isAuthenticated()">
                     Hi, ${userName}
-                    <%--<c:url var="logout" value="/j_spring_security_logout"/>--%>
                     <button class="logout"><a href="${logout}" id="logOutButton">logout</a></button>
                 </sec:authorize>
             </c:otherwise>

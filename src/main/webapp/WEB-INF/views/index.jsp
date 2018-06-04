@@ -4,7 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="e" uri="http://www.springframework.org/tags" %>
-<e:url value="/j_spring_security_check" var="loginUrl" />
 <script src="http://code.jquery.com/jquery-1.10.2.js"
         type="text/javascript"></script>
 <script src="js/app-ajax.js" type="text/javascript"></script>
