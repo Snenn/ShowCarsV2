@@ -8,7 +8,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Data
-@ToString (exclude = "user")
+@ToString(exclude = "user")
 @EqualsAndHashCode (exclude = "user")
 @Entity
 @Table(name = "AD")
@@ -47,6 +47,7 @@ public class Ad {
         this.year = year;
         this.description = description;
     }
+
 
     public int getId() {
         return id;
