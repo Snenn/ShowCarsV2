@@ -10,20 +10,29 @@
     </div>
 
     <div style="float: right; width: 400px; height: 100px; background-color: rgba(255,255,255,0.9);">
-        <div style="width: 235px; float: left">
-            <form class="form-group" method="post" action="${loginUrl}">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                <input id="j_username" name="j_username" type="text" style="margin-left: 20px; margin-top: 10px"
-                       placeholder="login">
-                <input id="j_password" name="j_password" type="password" style="margin-left: 20px; margin-top: 10px"
-                       placeholder="password">
-                <button type="submit" style="margin-left: 70px; margin-top: 10px">login</button>
-                <button style="width: 70px; height: 70px"><a href="/logout"> logout</a></button>
-            </form>
-        </div>
-        <div style="float: left; margin-top: 40px">or</div>
-        <div style="margin-top: 20px; margin-left: 300px">
-            <button style="width: 70px; height: 70px"><a href="/signUp"> create new account</a></button>
-        </div>
+        Test data: ${userName}
+        <c:choose>
+            <c:when test="${userName=='null'}">
+                <div style="width: 235px; float: left">
+                    <form class="form-group" method="post" action="${loginUrl}">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <input id="j_username" name="j_username" type="text" style="margin-left: 20px; margin-top: 10px"
+                               placeholder="login">
+                        <input id="j_password" name="j_password" type="password" style="margin-left: 20px; margin-top: 10px"
+                               placeholder="password">
+                        <button type="submit" style="margin-left: 70px; margin-top: 10px">login</button>
+                        <button style="width: 70px; height: 70px"><a href="/logout"> logout</a></button>
+                    </form>
+                </div>
+                <div style="float: left; margin-top: 40px">or</div>
+                <div style="margin-top: 20px; margin-left: 300px">
+                    <button style="width: 70px; height: 70px"><a href="/signUp"> create new account</a></button>
+                </div>
+            </c:when>
+            <c:otherwise>
+                Hi, ${userName}
+            </c:otherwise>
+        </c:choose>
+
     </div>
 </div>

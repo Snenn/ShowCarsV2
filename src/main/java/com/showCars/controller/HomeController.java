@@ -31,8 +31,11 @@ public class HomeController implements Serializable {
     public String homePage2(ModelMap model, HttpServletRequest req, HttpSession httpSession) {
         User user=userService.findByLogin(Util.getPrincipal());
         System.out.println("!!!!!!!!User is now:  !!!!!!!!!"+user);
-//        httpSession.setAttribute("user", user);
-
+        if (user!= null) {
+            httpSession.setAttribute("userName", user.getName()+" "+user.getSurname());
+        } else {
+            httpSession.setAttribute("userName", "null");
+        }
         return "home";
     }
 
