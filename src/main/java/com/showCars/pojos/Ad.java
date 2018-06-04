@@ -8,8 +8,8 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Data
-@ToString
-@EqualsAndHashCode
+@ToString (exclude = "user")
+@EqualsAndHashCode (exclude = "user")
 @Entity
 @Table(name = "AD")
 public class Ad {
@@ -19,7 +19,7 @@ public class Ad {
     private int id;
     @JsonIgnore
     @JoinColumn
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
     @Column
     private int photo;
@@ -29,7 +29,6 @@ public class Ad {
     private String make;
     @Column
     private String model;
-
     @Column
     private int year;
     @Column
