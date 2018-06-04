@@ -1,5 +1,4 @@
-<e:url value="/j_spring_security_check" var="loginUrl" />
-<e:url var="logout" value="/j_spring_security_logout"/>
+<e:url value="/j_spring_security_check" var="loginUrl"/>
 <div style="width: 1300px; height: 100px;margin-left: 100px; margin-top: 5px; border-radius: 5px">
     <div style="float: left; width: 900px; height: 100px; margin-top: 5px">
         <div style="">
@@ -31,10 +30,16 @@
                 </div>
             </c:when>
             <c:otherwise>
-                <sec:authorize access="isAuthenticated()">
-                    Hi, ${userName}
-                    <button class="logout"><a href="${logout}" id="logOutButton">logout</a></button>
-                </sec:authorize>
+                Hi, ${userName}
+                <c:url var="logoutUrl" value="/logout"/>
+                <form action="${logoutUrl}"
+                      method="post">
+                    <input type="submit"
+                           value="Log out" />
+                    <input type="hidden"
+                           name="${_csrf.parameterName}"
+                           value="${_csrf.token}"/>
+                </form>
             </c:otherwise>
         </c:choose>
 

@@ -19,7 +19,7 @@
 					password-parameter="j_password"
 					authentication-failure-url="/errorLogin"
 					authentication-success-handler-ref="MyAuthenticationSuccessHandler"/>
-		<logout logout-url="/j_spring_security_logout" logout-success-url="/" />
+		<logout logout-url="/logout" logout-success-url="/" />
 	</http>
 
 	<authentication-manager>
