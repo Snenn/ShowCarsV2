@@ -17,7 +17,8 @@
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <input id="j_username" name="j_username" type="text" style="margin-left: 20px; margin-top: 10px"
                                placeholder="login">
-                        <input id="j_password" name="j_password" type="password" style="margin-left: 20px; margin-top: 10px"
+                        <input id="j_password" name="j_password" type="password"
+                               style="margin-left: 20px; margin-top: 10px"
                                placeholder="password">
                         <button type="submit" style="margin-left: 70px; margin-top: 10px">login</button>
                     </form>
@@ -28,9 +29,11 @@
                 </div>
             </c:when>
             <c:otherwise>
-                Hi, ${userName}
-                <c:url var="logout" value="/j_spring_security_logout"/>
-                <button class="logout"><a href="${logout}" id="logOutButton">logout</a></button>
+                <sec:authorize access="isAuthenticated()">
+                    Hi, ${userName}
+                    <c:url var="logout" value="/j_spring_security_logout"/>
+                    <button class="logout"><a href="${logout}" id="logOutButton">logout</a></button>
+                </sec:authorize>
             </c:otherwise>
         </c:choose>
 
