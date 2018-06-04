@@ -29,7 +29,8 @@
             </c:when>
             <c:otherwise>
                 Hi, ${userName}
-                <button style="width: 70px; height: 70px" class="logout"><a href="${logout}" id="logOutButton"> logout</a></button>
+                <c:url var="logout" value="/j_spring_security_logout"/>
+                <button class="logout"><a href="${logout}" id="logOutButton">logout</a></button>
             </c:otherwise>
         </c:choose>
 
