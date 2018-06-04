@@ -29,10 +29,15 @@ public class Ad {
     private String make;
     @Column
     private String model;
+
     @Column
     private int year;
     @Column
     private String description;
+
+    public Ad() {
+    }
+
 
     public Ad(User user, int photo, int price, String make, String model, int year, String description) {
         this.user = user;
