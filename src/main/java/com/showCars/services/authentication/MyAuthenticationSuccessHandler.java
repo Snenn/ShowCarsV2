@@ -58,9 +58,9 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
             }
 
         if (isAdmin) {
-            return "/showCars";
+            return "/";
         } else if (isUser) {
-            return "/signUp";
+            return "/";
         } else {
             throw new IllegalStateException();
         }

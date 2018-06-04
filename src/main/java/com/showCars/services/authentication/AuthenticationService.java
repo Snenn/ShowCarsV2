@@ -23,9 +23,7 @@ public class AuthenticationService implements UserDetailsService {
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         User user = userService.findByLogin(login);
-        System.out.println("!!!!!!!!!!!!!!User : " + user);
         if (user == null) {
-            System.out.println("User not found");
             throw new UsernameNotFoundException("Username not found");
         }
         return new MvcUser(user.getName(), user.getSurname(), user.getLogin(), user.getPassword(),
@@ -36,7 +34,6 @@ public class AuthenticationService implements UserDetailsService {
     private List<GrantedAuthority> getGrantedAuthorities(User user) {
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         authorities.add(new SimpleGrantedAuthority("ROLE_" +user.getUserRole().getNameRoleUser()));
-        System.out.print("!!!!!!!!!!!!!!authorities :" + authorities);
         return authorities;
     }
 }

@@ -10,7 +10,6 @@
     </div>
 
     <div style="float: right; width: 400px; height: 100px; background-color: rgba(255,255,255,0.9);">
-        Test data: ${userName}
         <c:choose>
             <c:when test="${userName=='null'}">
                 <div style="width: 235px; float: left">
@@ -21,7 +20,6 @@
                         <input id="j_password" name="j_password" type="password" style="margin-left: 20px; margin-top: 10px"
                                placeholder="password">
                         <button type="submit" style="margin-left: 70px; margin-top: 10px">login</button>
-                        <button style="width: 70px; height: 70px"><a href="/logout"> logout</a></button>
                     </form>
                 </div>
                 <div style="float: left; margin-top: 40px">or</div>
@@ -31,6 +29,7 @@
             </c:when>
             <c:otherwise>
                 Hi, ${userName}
+                <button style="width: 70px; height: 70px" class="logout"><a href="${logout}" id="logOutButton"> logout</a></button>
             </c:otherwise>
         </c:choose>
 
