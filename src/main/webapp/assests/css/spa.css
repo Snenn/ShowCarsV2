@@ -28,10 +28,12 @@
 }
 .adverColomnInfoHeader {
     height: 30px;
+    width: 630px;
     border-bottom: solid #e4e4e4;
 }
 .adverColomnInfoDesc {
     height: 120px;
+    width: 630px;
 }
 .adverColomnInfoPrice{
     float: left;
