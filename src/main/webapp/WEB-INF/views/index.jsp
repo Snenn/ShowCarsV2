@@ -21,6 +21,7 @@
     }</style>
     <title>Pre-owned cars</title>
     <link href="../../assests/css/spa.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="../../assests/pictures/logo.png"/>
 </head>
 
 <body>
