@@ -88,7 +88,7 @@
         </div>
         <div id="root"></div>
     </div>
-    <div style="float: right; width: 250px; height: 600px; background-color: #d5d5d5">
+    <div style="float: right; width: 245px; height: 600px; background-color: #d5d5d5">
         <div style="height: 30px; background-color: #d5d5d5; text-align: center ">
             <div>here can be your ads
             </div>
