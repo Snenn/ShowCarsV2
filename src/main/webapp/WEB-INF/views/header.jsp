@@ -1,19 +1,21 @@
 <e:url value="/j_spring_security_check" var="loginUrl"/>
-<div style="width: 1300px; height: 100px;margin-left: 100px; margin-top: 5px; border-radius: 5px">
-    <div style="float: left; width: 900px; height: 100px; margin-top: 5px">
+<div style="width: 1440px; height: 150px; background-color: white">
+    <div style="float: left; width: 1000px; height: 100px; margin-top: 15px;">
         <div style="">
-            <div style="float: right; width: 300px; height: 40px;text-align: center; font-size: xx-large; font: 'Franklin Gothic Book'; ">
+            <div style="float: right; width: 300px; height: 40px;text-align: center; font-size: 42px;
+             font: 'Franklin Gothic Book'; font-weight: bold; color: #333333 ">
                 PRE - OWNED<br>CARS
             </div>
-            <img style="align-content: center; width: 600px; height: 80px" src="assests/pictures/header.jpg"
-                 class="img-rounded img-responsive"/>
+            <img style="align-content: center; width: 700px; height: 100px; margin-top: 20px"
+                 src="assests/pictures/header.jpg"
+            />
         </div>
     </div>
 
-    <div style="float: right; width: 400px; height: 100px; background-color: rgba(255,255,255,0.9);">
+    <div style="float: right; width: 400px; height: 100px;">
         <c:choose>
             <c:when test="${userName=='null'}">
-                <div style="width: 235px; float: left">
+                <div style="width: 235px; float: left;">
                     <form class="form-group" method="post" action="${loginUrl}">
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <input id="j_username" name="j_username" type="text" style="margin-left: 20px; margin-top: 10px"
@@ -21,12 +23,14 @@
                         <input id="j_password" name="j_password" type="password"
                                style="margin-left: 20px; margin-top: 10px"
                                placeholder="password">
-                        <button type="submit" style="margin-left: 70px; margin-top: 10px">login</button>
+                        <div class="container">
+                            <button type="submit" class="btn">Sign in</button>
+                        </div>
                     </form>
                 </div>
-                <div style="float: left; margin-top: 40px">or</div>
-                <div style="margin-top: 20px; margin-left: 300px">
-                    <button style="width: 70px; height: 70px"><a href="/signUp"> create new account</a></button>
+                <div style="float: left; margin-top: 40px; font-size: 24px">or</div>
+                <div class="container" style="float: left; margin-top: 20px; margin-left: -30px">
+                    <a href="/signUp" ><button class="btn" style="white-space: normal">create new account</button></a>
                 </div>
             </c:when>
             <c:otherwise>
@@ -35,7 +39,7 @@
                 <form action="${logoutUrl}"
                       method="post">
                     <input type="submit"
-                           value="Log out" />
+                           value="Log out"/>
                     <input type="hidden"
                            name="${_csrf.parameterName}"
                            value="${_csrf.token}"/>

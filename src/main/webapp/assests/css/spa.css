@@ -1,61 +1,133 @@
+.main {
+    margin-top: -10px;
+    margin-left: 30px;
+    width: 1440px;
+    height: 3500px;
+    background-color: whitesmoke;
+}
+.adverColomnBorder {
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 150px;
+    width: 925px;
+    border: solid #e4e4e4;
+    background-color: white;
+}
 .adverColomn {
     float: left;
-    border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 238, 232, 0.9);
     height: 130px;
-    margin-left: 3px;
-    margin-top: 5px;
     text-align: center;
     vertical-align: middle;
 }
 .adverColomnInfo {
     float: left;
-    border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.9);
-    height: 130px;
-    margin-left: 3px;
-    margin-top: 5px;
     text-align: center;
     vertical-align: middle;
-    width: 775px
+    width: 630px;
 }
 .adverColomnInfoHeader {
     height: 30px;
-    border-color: black;
-    background-color: aqua;
+    border-bottom: solid #e4e4e4;
 }
 .adverColomnInfoDesc {
     height: 120px;
 }
 .adverColomnInfoPrice{
     float: left;
-    border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.9);
-    height: 130px;
-    margin-left: 3px;
-    margin-top: 5px;
+    height: 150px;
+    width: 140px;
     text-align: center;
     vertical-align: middle;
+    font-weight: bold;
+    font-size: 40px;
+    border-left: solid #e4e4e4;
+}
+.adverPhoto {
+    align-content: center;
     width: 150px;
+    height: 150px;
+    margin-top: 0px;
 }
 .adverColomnPhoto {
     float: left;
-    border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.9);
-    height: 130px;
-    margin-left: 3px;
-    margin-top: 5px;
-    text-align: center;
-    vertical-align: middle;
+    height: 150px;
     width: 150px;
+    border-right: solid #e4e4e4;
 }
 
 .adverColomnButton {
     float: left;
     border-radius: 10px;
-    background-color: rgba(99, 255, 255, 0.9);
     height: 30px;
     margin-left: 3px;
     text-align: center;
     vertical-align: middle;
+}
+.adverMakeMade {
+    width: 530px;
+    height: 30px;
+    float: left;
+    text-align: left;
+    text-indent: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #5750f1;
+}
+.adverYear {
+    width: 100px;
+    height: 30px;
+    float: left;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: #5750f1;
+}
+.centr {
+    margin-top: 30%;
+}
+.centr5px {
+    margin-top: 5px;
+}
+.inputMenu {
+    width: 40%;
+    padding: 2px 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+.selectMenu {
+    width: 86%;
+    padding: 2px 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 40%;
+    max-width: 40px;
+}
+
+.container .btn {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    padding: 12px 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 40px;
+    margin-top: 5px;
+    text-decoration: none;
+    white-space: pre;
+}
+
+
+.container .btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.container .a:hover {
+    background-color: black;
+    color: white;
 }

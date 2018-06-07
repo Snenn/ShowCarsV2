@@ -36,20 +36,29 @@ var Ads = React.createClass({
     render () {
         const items = this.state.list.map((item) => {
             return (
-                 <div key={item.id}>
-                     <div className='adverColomnPhoto' >{item.photo}</div>
-                     <div className='adverColomnInfo' >
-                         <div className='adverColomnInfoHeader' >
-                             {item.make} {item.model} {item.year}</div>
-                         <div className='adverColomnInfoDesc'>{item.description}</div>
-                     </div>
-                     <div className='adverColomnInfoPrice'>{item.price}</div>
-                 </div>
+                <div key={item.id} className="adverColomnBorder">
+                    <div className='adverColomnPhoto'>
+                        <img src="assests/pictures/example.jpg" className="adverPhoto"/>
+                    </div>
+                    <div className='adverColomnInfo'>
+                        <div className='adverColomnInfoHeader'>
+                            <div className='adverMakeMade'>{item.make} {item.model}</div>
+                            <div className='adverYear'>{item.year}</div>
+
+                            </div>
+                        <div className='adverColomnInfoDesc'>{item.description}</div>
+                    </div>
+                    <div className='adverColomnInfoPrice'>
+                        <div className="centr">{item.price}</div>
+                    </div>
+                </div>
 
             );
         });
         return (
-            <div>{items}</div>
+            <div>
+                <div>{items}</div>
+            </div>
         );
     }
 
