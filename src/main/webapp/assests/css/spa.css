@@ -9,7 +9,7 @@
     margin-top: 5px;
     margin-left: 5px;
     height: 150px;
-    width: 920px;
+    width: 925px;
     border: solid #e4e4e4;
     background-color: white;
 }
@@ -38,7 +38,7 @@
 .adverColomnInfoPrice{
     float: left;
     height: 150px;
-    width: 135px;
+    width: 130px;
     text-align: center;
     vertical-align: middle;
     font-weight: bold;
