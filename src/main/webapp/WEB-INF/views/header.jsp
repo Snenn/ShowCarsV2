@@ -15,7 +15,7 @@
     <div style="float: right; width: 400px; height: 100px;">
         <c:choose>
             <c:when test="${userName=='null'}">
-                <div style="width: 235px; float: left;">
+                <div style="width: 220px; float: left;">
                     <form class="form-group" method="post" action="${loginUrl}">
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <input id="j_username" name="j_username" type="text" style="margin-left: 20px; margin-top: 10px"

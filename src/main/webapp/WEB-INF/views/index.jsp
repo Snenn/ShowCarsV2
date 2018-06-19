@@ -11,8 +11,12 @@
 <script src="../../assests/js/EventEmitter.js"></script>
 <script src="../../assests/js/sweetalert.min.js"></script>
 <script type="text/babel" src="../../assests/js/ads.js"></script>
+<script type="text/babel" src="../../assests/js/buttonClickMe.js"></script>
 <link rel="stylesheet" type="text/css" href="../../assests/js/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="../../assests/css/spa.css" media="all">
+<link rel="stylesheet" type="text/css" href="../../assests/css/buttonClickMe.css" media="all">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<meta name="viewport" content="width=device-width">
 <head>
     <%--<style>body { background:url("../../resourses/images/homeBackground.jpg")}    </style>--%>
     <style>body {
@@ -74,6 +78,34 @@
                 <button class="btn" type="submit" value="Submit">clean</button>
             </div>
 
+            <div style="margin-top: 30px">
+                <div class="demo-btns">
+                    <div class="buttons">
+                        <p>
+                            <a href="" data-modal="#modal" class="modal__trigger">Click Me</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- Modal Click Me -->
+                <div id="modal" class="modal modal__bg" role="dialog" aria-hidden="true">
+                    <div class="modal__dialog">
+                        <div class="modal__content">
+                            <p>I'm coolsdffffffffffffffffffffffffffffffffffffffffffff
+                                sfddddddddddddddddddddddddddddddddddddddd
+                                sdfffffffffffffffffffffffffffffffffffffff
+                                fsddddddddddddddddddddddddddddddddddddddddddddddddddddd
+                                sdfffffffffffffffffffffffffffffffffhhh</p>
+                            <!-- modal close button -->
+                            <a href="" class="modal__close demo-close">
+                                <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </form>
     </div>
     <div style="width: 940px; height: 3000px;float: left; ">
@@ -98,4 +130,6 @@
         />
     </div>
 </div>
+
+<script  src="js/buttonClickMe.js"></script>
 </body>
