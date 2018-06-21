@@ -31,87 +31,88 @@
 
 <div class="main">
     <%@ include file="header.jsp" %>
-
-    <div style="position: absolute; top: 190px; left: 880px">
-        <div class="demo-btns">
-            <div class="buttons">
-                <p>
-                    <a href="#ClickMe" class="modal__trigger">Click Me</a>
-                </p>
+        <div style="position: absolute; top: 190px; left: 880px">
+            <div class="demo-btns">
+                <div class="buttons">
+                    <p>
+                        <a href="#ClickMe" class="modal__trigger">Click Me</a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="float: left; width: 250px; height: 600px; background-color: white;">
-        <div style="height: 30px; background-color: #d5d5d5; text-align: center ">
-            <div>123 ads</div>
-        </div>
-        <form style="font-size: 18px; margin-left: 30px; margin-top: 40px">
-            <div>
-                <div>price</div>
-                <input class="inputMenu" type="text" id="minPrice" name="minPrice" size="20px"> - <input
-                    class="inputMenu" type="text" id="maxPrice" name="maxPrice">
+        <div style="float: left; width: 20%; height: 600px; background-color: white;">
+            <div style="height: 30px; background-color: #d5d5d5; text-align: center ">
+                <div>123 ads</div>
             </div>
-            <div class="">
+            <form style="font-size: 18px; margin-left: 30px; margin-top: 40px">
+                <div>
+                    <div>price</div>
+                    <input class="inputMenu" type="text" id="minPrice" name="minPrice" size="20px"> - <input
+                        class="inputMenu" type="text" id="maxPrice" name="maxPrice">
+                </div>
                 <div class="">
-                    <div>make</div>
+                    <div class="">
+                        <div>make</div>
+                    </div>
+                    <div>
+                        <select class="selectMenu" id="make" name="make">
+                            <option value="1">honda</option>
+                            <option value="2">mercedes-benz</option>
+                            <option value="3">dodge</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div>model</div>
+                    </div>
+                    <div>
+                        <select class="selectMenu" id="model" name="model">
+                            <option value="1">civik</option>
+                            <option value="2">accord</option>
+                            <option value="3">crv</option>
+                        </select>
+                    </div>
                 </div>
                 <div>
-                    <select class="selectMenu" id="make" name="make">
-                        <option value="1">honda</option>
-                        <option value="2">mercedes-benz</option>
-                        <option value="3">dodge</option>
-                    </select>
+                    <div>year</div>
+                    <input class="inputMenu" type="text" id="minYear" name="minYear" size="20px"> - <input
+                        class="inputMenu" type="text" id="maxYear" name="maxYear">
                 </div>
-            </div>
-            <div class="">
-                <div class="">
-                    <div>model</div>
+                <div class="container">
+                    <button class="btn" type="submit" value="Submit">apply</button>
                 </div>
-                <div>
-                    <select class="selectMenu" id="model" name="model">
-                        <option value="1">civik</option>
-                        <option value="2">accord</option>
-                        <option value="3">crv</option>
-                    </select>
+                <div class="container">
+                    <button class="btn" type="submit" value="Submit">clean</button>
                 </div>
-            </div>
-            <div>
-                <div>year</div>
-                <input class="inputMenu" type="text" id="minYear" name="minYear" size="20px"> - <input
-                    class="inputMenu" type="text" id="maxYear" name="maxYear">
-            </div>
-            <div class="container">
-                <button class="btn" type="submit" value="Submit">apply</button>
-            </div>
-            <div class="container">
-                <button class="btn" type="submit" value="Submit">clean</button>
-            </div>
-        </form>
-    </div>
-    <div style="width: 940px; height: 3000px;float: left; ">
-        <div style="height: 30px;">
-            <div style="height: 30px; width: 690px; background-color: #d5d5d5; float: left"></div>
-            <div style="height: 30px; width: 100px; background-color: #d5d5d5; float: left; text-align: center; ">
-                <div>years</div>
-            </div>
-            <div style="height: 30px; width: 150px; background-color: #d5d5d5; float: left; text-align: center">
-                <div>price</div>
-            </div>
+            </form>
         </div>
-        <div id="root"></div>
-    </div>
-    <div style="float: right; width: 250px; height: 600px; background-color: #d5d5d5">
-        <div style="height: 30px; background-color: #d5d5d5; text-align: center ">
-            <div>here can be your ads
+        <div style="width: 60%; height: 3000px;float: left;background-color: #d5d5d5; float: left; text-align: center;">
+            <div style="height: 30px; width: 100%;">
+                <div style="height: 30px; width: 75%; float: left"></div>
+                <div style="height: 30px; width: 10%; float: left">
+                    <a>years</a>
+                </div>
+                <div style="height: 30px; width: 15%; float: left">
+                    <a>price</a>
+                </div>
             </div>
+            <div id="root"></div>
         </div>
-        <img style="align-content: center; width: 250px; height: 570px;"
-             src="assests/pictures/adsMB.gif"
-        />
-    </div>
+        <div style="float: left; width: 20%; height: 600px; background-color: #d5d5d5">
+            <div style="height: 30px; width: 100%; background-color: #d5d5d5; text-align: center ">
+                <div>here can be your ads
+                </div>
+            </div>
+            <img style="align-content: center; width: 100%; height: 570px;"
+                 src="assests/pictures/adsMB.gif"
+            />
+        </div>
 </div>
-<a  href="#" id="ClickMe" class="clickMe">
+
+
+<a href="#" id="ClickMe" class="clickMe">
     <div id="okno" class="okno">
         Всплывающее окошко!
     </div>

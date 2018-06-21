@@ -44,7 +44,6 @@ var Ads = React.createClass({
                         <div className='adverColomnInfoHeader'>
                             <div className='adverMakeMade'>{item.make} {item.model}</div>
                             <div className='adverYear'>{item.year}</div>
-
                             </div>
                         <div className='adverColomnInfoDesc'>{item.description}</div>
                     </div>

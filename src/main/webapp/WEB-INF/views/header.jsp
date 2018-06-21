@@ -1,5 +1,5 @@
 <e:url value="/j_spring_security_check" var="loginUrl"/>
-<div style="width: 1440px; height: 150px; background-color: white">
+<div style="width: 100%; height: 150px; background-color: white">
     <div style="float: left; width: 1000px; height: 100px; margin-top: 15px;">
         <div style="">
             <div style="float: right; width: 300px; height: 40px;text-align: center; font-size: 42px;
