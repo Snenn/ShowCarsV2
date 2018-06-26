@@ -1,18 +1,18 @@
 <e:url value="/j_spring_security_check" var="loginUrl"/>
 <div style="width: 100%; height: 150px; background-color: white">
-    <div style="float: left; width: 1000px; height: 100px; margin-top: 15px;">
+    <div style="float: left; width: 70%; height: 100px; margin-top: 10px;">
         <div style="">
-            <div style="float: right; width: 20%; height: 40px;text-align: center; font-size: 42px;
-             font: 'Franklin Gothic Book'; font-weight: bold; color: #333333 ">
+            <div style="float: right; width: 35%; height: 40px;text-align: center; font-size: 300%;
+             font: 'Franklin Gothic Book'; font-weight: bold; color: #333333;">
                 PRE - OWNED<br>CARS
             </div>
-            <img style="align-content: center; width: 50%; height: 100px; margin-top: 20px"
+            <img style="align-content: center; width: 65%; height: 100px; margin-top: 20px"
                  src="assests/pictures/header.jpg"
             />
         </div>
     </div>
 
-    <div style="float: right; width: 25%; height: 100px;">
+    <div style="float: right; width: 30%; height: 100px;">
         <c:choose>
             <c:when test="${userName=='null'}">
                 <div style="width: 15%; float: left;">
