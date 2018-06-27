@@ -15,21 +15,21 @@
     <div style="float: right; width: 30%; height: 100px;">
         <c:choose>
             <c:when test="${userName=='null'}">
-                <div style="width: 15%; float: left;">
+                <div style="width: 50%; float: left; height: 100%; margin-top: 8%">
                     <form class="form-group" method="post" action="${loginUrl}">
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                        <input id="j_username" name="j_username" type="text" style="margin-left: 20px; margin-top: 10px"
+                        <input id="j_username" name="j_username" type="text" style="margin-left: 2%; margin-top: 1%"
                                placeholder="login">
                         <input id="j_password" name="j_password" type="password"
-                               style="margin-left: 2%; margin-top: 10px"
+                               style="margin-left: 2%; margin-top: 1%"
                                placeholder="password">
                         <div class="container">
                             <button type="submit" class="btn">Sign in</button>
                         </div>
                     </form>
                 </div>
-                <div style="float: left; margin-top: 40px; font-size: 24px">or</div>
-                <div class="container" style="float: left; margin-top: 20px; margin-left: -3%">
+                <div style="float: left; width: 10%; height: 100%; margin-top: 40px; font-size: 24px">or</div>
+                <div class="container" style="float: left; width: 30%; height: 100%; margin-top: 20px; margin-left: -3%">
                     <a href="/signUp" ><button class="btn" style="white-space: normal">create new account</button></a>
                 </div>
             </c:when>
