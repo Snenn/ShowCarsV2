@@ -17,7 +17,7 @@ import java.util.List;
 @Transactional
 public class UserService implements IUserService {
 
-    private Logger logger= Logger.getLogger(UserService.class.getName());
+    private Logger logger = Logger.getLogger(UserService.class.getName());
     private String messages;
     private User user;
 
@@ -59,6 +59,17 @@ public class UserService implements IUserService {
     @Override
     public List getAll() {
         return userDao.getAll();
+    }
+
+    @Override
+    public int checkLoginPassword(String login, String password) {
+        User user = (User) userDao.findByLogin(login);
+        if (user == null) return 0;
+        else {
+            if (user.getPassword().equals(password)) return 1;
+            else return 0;
+        }
+
     }
 
 

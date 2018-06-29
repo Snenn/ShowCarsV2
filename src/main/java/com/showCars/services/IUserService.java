@@ -20,4 +20,6 @@ public interface IUserService {
 
     List getAll ();
 
+    int checkLoginPassword (String login, String password );
+
 }
