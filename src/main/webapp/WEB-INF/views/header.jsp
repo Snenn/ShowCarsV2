@@ -3,7 +3,7 @@
 <div style="width: 100%; height: 150px; background-color: white">
     <div style="float: left; width: 70%; height: 100px; margin-top: 10px;">
         <div style="">
-            <div style="float: right; width: 35%; height: 40px;text-align: center; font-size: 300%;
+            <div style="float: right; width: 35%; height: 30%;text-align: center; font-size: 300%;
              font: 'Franklin Gothic Book'; font-weight: bold; color: #333333;">
                 PRE - OWNED<br>CARS
             </div>

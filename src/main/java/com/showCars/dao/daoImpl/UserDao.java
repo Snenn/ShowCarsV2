@@ -84,6 +84,8 @@ public class UserDao extends Dao<User> implements IUserDao<User> {
         return (User) criteria.uniqueResult();
     }
 
+
+
     public int getCount(){
         int result=0;
         try {
