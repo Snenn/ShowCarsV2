@@ -11,4 +11,7 @@ public interface IAdService<TYPE> extends IDao<TYPE> {
     void saveOrUpdate(Ad ad);
 
     List getAll ();
+
+    List getAllWithFilters (String minYear, String maxYear, String minPrice, String maxPrice);
+
 }

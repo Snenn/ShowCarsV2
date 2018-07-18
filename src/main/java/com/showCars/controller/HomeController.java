@@ -52,20 +52,25 @@ public class HomeController implements Serializable {
     public String signUp(ModelMap model, HttpServletRequest req, HttpSession httpSession) {
         return "signUp";
     }
+    @RequestMapping(value = {"/errorLogin"}, method = {RequestMethod.POST, RequestMethod.GET})
+    public String errorLogin(ModelMap model, HttpServletRequest req, HttpSession httpSession) {
+        model.addAttribute("errorLogin", "invalid login and password");
+        return "home";
+    }
 
-    @RequestMapping(value = {"/reg"}, method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = {"/signUp/reg"}, method = {RequestMethod.POST, RequestMethod.GET})
     public String addUser(@ModelAttribute("userForm") User user,
-                          HttpServletRequest request) throws Exception {
+                          HttpServletRequest request,ModelMap model) throws Exception {
         if (userService.findByLogin(user.getLogin()) == null) {
             UserRole userRole=userService.getRoleUser();
             user.setUserRole(userRole);
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!"+user);
             userService.saveOrUpdate(user);
-            request.setAttribute("jsp_message", "successful");
-            return "signUp";
+            model.addAttribute("jsp_message", "successful");
+            return "signUpSucceful";
         } else {
-            request.getSession().setAttribute("jsp_message", "Такой логин существует, выберите другой");
+            model.addAttribute("jsp_message", "this login already exists");
             return "signUp";
         }
     }
+
 }

@@ -30,6 +30,15 @@ public class REST {
 
     }
 
+    @RequestMapping(value = "adsFilters", method = RequestMethod.GET)
+    public String getAllAdsFilter(String minYear, String maxYear, String minPrice, String maxPrice) throws JsonProcessingException {
+        List adList = adService.getAllWithFilters(minYear, maxYear, minPrice, maxPrice);
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(adList);
+        return json;
+
+    }
+
     @RequestMapping(value = "check", method = RequestMethod.GET)
     public String checkLoginPassword(String login, String password) throws JsonProcessingException {
 

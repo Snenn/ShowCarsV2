@@ -10,17 +10,17 @@ var Ads = React.createClass({
 
     loadData () {
         var self = this;
+        var minYear = document.getElementById("minYear");
+        var maxYear = document.getElementById("maxYear");
+        var minPrice = document.getElementById("minPrice");
+        var maxPrice = document.getElementById("maxPrice");
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        // var url = 'http://localhost:8080/ads'
-        var url = 'https://showcarsv2.herokuapp.com/ads'
+        var url = 'https://showcarsv2.herokuapp.com/adsFilters?minPrice='+minPrice.value+'$maxPrice='+maxPrice.value+'&minYear='+minYear.value+'$maxYear'+maxYear.value;
         req.open('GET', url, true);
         req.send();
         var json;
         req.onreadystatechange = function () {
-            // document.write( req.readyState + " - req.readyState");
-            // document.write( req.status + " - req.status");
-            // document.write(req);
             if (req.readyState === 4 && req.status === 200) {
                 json = req.response;
                 self.setState({list: json});

@@ -42,51 +42,51 @@
     </div>
 
     <div style="float: left; width: 20%; height: 600px; background-color: white;">
-        <div style="height: 30px; background-color: #d5d5d5; text-align: center ">
-            <div>123 ads</div>
+        <div style="height: 30px; background-color: #d5d5d5; text-align: center">
+            <div></div>
         </div>
-        <form style="font-size: 18px; margin-left: 30px; margin-top: 40px">
+        <div style="margin-top: 20%;margin-left: 10%">
             <div>
                 <div>price</div>
                 <input class="inputMenu" type="text" id="minPrice" name="minPrice" size="20px"> - <input
                     class="inputMenu" type="text" id="maxPrice" name="maxPrice">
             </div>
-            <div class="">
-                <div class="">
-                    <div>make</div>
-                </div>
-                <div>
-                    <select class="selectMenu" id="make" name="make">
-                        <option value="1">honda</option>
-                        <option value="2">mercedes-benz</option>
-                        <option value="3">dodge</option>
-                    </select>
-                </div>
-            </div>
-            <div class="">
-                <div class="">
-                    <div>model</div>
-                </div>
-                <div>
-                    <select class="selectMenu" id="model" name="model">
-                        <option value="1">civik</option>
-                        <option value="2">accord</option>
-                        <option value="3">crv</option>
-                    </select>
-                </div>
-            </div>
+            <%--<div class="">--%>
+            <%--<div class="">--%>
+            <%--<div>make</div>--%>
+            <%--</div>--%>
+            <%--<div>--%>
+            <%--<select class="selectMenu" id="make" name="make">--%>
+            <%--<option value="1">honda</option>--%>
+            <%--<option value="2">mercedes-benz</option>--%>
+            <%--<option value="3">dodge</option>--%>
+            <%--</select>--%>
+            <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="">--%>
+            <%--<div class="">--%>
+            <%--<div>model</div>--%>
+            <%--</div>--%>
+            <%--<div>--%>
+            <%--<select class="selectMenu" id="model" name="model">--%>
+            <%--<option value="1">civik</option>--%>
+            <%--<option value="2">accord</option>--%>
+            <%--<option value="3">crv</option>--%>
+            <%--</select>--%>
+            <%--</div>--%>
+            <%--</div>--%>
             <div>
                 <div>year</div>
                 <input class="inputMenu" type="text" id="minYear" name="minYear" size="20px"> - <input
                     class="inputMenu" type="text" id="maxYear" name="maxYear">
             </div>
             <div class="container">
-                <button class="btn" type="submit" value="Submit">apply</button>
+                <button class="btn" type="submit" value="Submit" id="filterApply">apply</button>
             </div>
             <div class="container">
-                <button class="btn" type="submit" value="Submit">clean</button>
+                <button class="btn" type="submit" value="Submit">clear</button>
             </div>
-        </form>
+        </div>
     </div>
     <div style="width: 60%; height: 3000px;float: left;background-color: #d5d5d5; float: left; text-align: center;">
         <div style="height: 30px; width: 100%;">
@@ -102,8 +102,7 @@
     </div>
     <div style="float: left; width: 20%; height: 600px; background-color: #d5d5d5">
         <div style="height: 30px; width: 100%; background-color: #d5d5d5; text-align: center ">
-            <div>here can be your ads
-            </div>
+            <div></div>
         </div>
         <img style="align-content: center; width: 100%; height: 570px;"
              src="assests/pictures/adsMB.gif"
@@ -117,10 +116,10 @@
         <div style="float: left; width: 75%; height: 40%">
             Greetings <br>
             I'm Mikalai Sniahurski <br>
-            This is my website training site to show my skills
+            This is my training website to show my skills
         </div>
         <div style="float: left; width: 25%; height: 40%"><img style=""
-                                                                src="assests/pictures/photo.jpg"
+                                                               src="assests/pictures/photo.jpg"
         /></div>
         <div style="text-align: left">
             I'm using tools here:<br>

@@ -21,7 +21,7 @@
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <input id="j_username" name="j_username" type="text" placeholder="login">
                         <input id="j_password" name="j_password" type="password" placeholder="password">
-                        <div id="errorLogin"></div>
+                        <div id="errorLogin">${errorLogin}</div>
                         <button>Sign in</button>
                         <p class="message">Not registered? <a href="/signUp">Create an account</a></p>
                             <%--<button type="submit" class="btn">Sign in</button>--%>
@@ -32,7 +32,7 @@
                 <div style="margin: 5% 5%;">
                     <div style="float: left; width: 70%; height: 100%">
                         <div style="text-align: center; width: 100%">Hi, ${userName}</div>
-                        <div style="text-align: center; width: 100%">info</div>
+                        <div style="text-align: center; width: 100%"></div>
                         <div>
                             <c:url var="logoutUrl" value="/logout"/>
                             <form action="${logoutUrl}"
@@ -46,7 +46,11 @@
                             </form>
                         </div>
                     </div>
-                    <div style="background-color: #0000cc; float: left; width: 30%; height: 100%">Picture</div>
+                    <div style="; float: left; width: 30%; height: 100%"><img
+                            style="align-content: center; width: 100%; height: 100px;"
+                            src="assests/pictures/user.jpg"
+                    />
+                    </div>
                 </div>
             </c:otherwise>
         </c:choose>

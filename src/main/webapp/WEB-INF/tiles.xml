@@ -9,4 +9,7 @@
 
     <definition name="signUp" template="/WEB-INF/views/signUp.jsp"/>
 
+    <definition name="signUpSucceful" template="/WEB-INF/views/signUpSucceful.jsp"/>
+
+
 </tiles-definitions>
