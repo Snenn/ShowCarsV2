@@ -1,5 +1,13 @@
 "use strict"
 
+window.ee = new EventEmitter();
+
+var filterApply = document.getElementById("filterApply");
+
+filterApply.onclick = function (event) {
+    window.ee.emit('Action', "renderFromFilter")
+}
+
 var Ads = React.createClass({
 
     getInitialState: function () {
@@ -16,7 +24,7 @@ var Ads = React.createClass({
         var maxPrice = document.getElementById("maxPrice");
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        var url = 'https://showcarsv2.herokuapp.com/adsFilters?minPrice='+minPrice.value+'$maxPrice='+maxPrice.value+'&minYear='+minYear.value+'$maxYear'+maxYear.value;
+        var url = 'https://showcarsv2.herokuapp.com/adsFilters?minYear='+minYear.value+'&maxYear='+maxYear.value+'&minPrice='+minPrice.value+'&maxPrice='+maxPrice.value;
         req.open('GET', url, true);
         req.send();
         var json;
@@ -63,6 +71,8 @@ var Ads = React.createClass({
 
 
 });
+
+
 
 ReactDOM.render(
     <Ads />

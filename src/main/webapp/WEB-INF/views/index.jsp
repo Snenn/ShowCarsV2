@@ -4,13 +4,13 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="e" uri="http://www.springframework.org/tags" %>
+<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
 <script src="../../assests/js/react.js"></script>
 <script src="../../assests/js/react-dom.js"></script>
 <script src="../../assests/js/browser.min.js"></script>
 <script src="../../assests/js/EventEmitter.js"></script>
 <script src="../../assests/js/sweetalert.min.js"></script>
-<script type="text/babel" src="../../assests/js/ads.js"></script>
 <link rel="stylesheet" type="text/css" href="../../assests/js/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="../../assests/css/spa.css" media="all">
 <link rel="stylesheet" type="text/css" href="../../assests/css/buttonClickMe.css" media="all">
@@ -81,10 +81,10 @@
                     class="inputMenu" type="text" id="maxYear" name="maxYear">
             </div>
             <div class="container">
-                <button class="btn" type="submit" value="Submit" id="filterApply">apply</button>
+                <button class="btn" value="apply" id="filterApply">apply</button>
             </div>
             <div class="container">
-                <button class="btn" type="submit" value="Submit">clear</button>
+                <button class="btn" value="clear">clear</button>
             </div>
         </div>
     </div>
@@ -133,5 +133,5 @@
 
     </div>
 </a>
-
+<script type="text/babel" src="../../assests/js/render.js"></script>
 </body>
