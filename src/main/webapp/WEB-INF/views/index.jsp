@@ -4,16 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="e" uri="http://www.springframework.org/tags" %>
-<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
-<script src="../../assests/js/react.js"></script>
-<script src="../../assests/js/react-dom.js"></script>
-<script src="../../assests/js/browser.min.js"></script>
-<script src="../../assests/js/EventEmitter.js"></script>
-<script src="../../assests/js/sweetalert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../../assests/js/sweetalert.css">
-<link rel="stylesheet" type="text/css" href="../../assests/css/spa.css" media="all">
-<link rel="stylesheet" type="text/css" href="../../assests/css/buttonClickMe.css" media="all">
+
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <meta name="viewport" content="width=device-width">
 <head>
@@ -28,7 +19,16 @@
 </head>
 
 <body>
-
+<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
+<script src="../../assests/js/react.js"></script>
+<script src="../../assests/js/react-dom.js"></script>
+<script src="../../assests/js/browser.min.js"></script>
+<script src="../../assests/js/EventEmitter.js"></script>
+<script src="../../assests/js/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../assests/js/sweetalert.css">
+<link rel="stylesheet" type="text/css" href="../../assests/css/spa.css" media="all">
+<link rel="stylesheet" type="text/css" href="../../assests/css/buttonClickMe.css" media="all">
 <div class="main">
     <%@ include file="header.jsp" %>
     <div style="position: absolute; top: 190px; left: 880px">
