@@ -19,7 +19,6 @@ var MainRender = React.createClass({
         },
 
         loadData () {
-            alert("loadData");
             var self = this;
             var minYear = document.getElementById("minYear");
             var maxYear = document.getElementById("maxYear");
@@ -45,7 +44,6 @@ var MainRender = React.createClass({
                 var newText = text;
                 self.setState({state: this.state});
                 self.loadData();
-                alert("listener work App");
             });
             self.loadData();
         },
@@ -57,7 +55,6 @@ var MainRender = React.createClass({
 
         render()
         {
-            alert("render Main");
             const items = this.state.data.map((item) => {
                 return (
                     <div key={item.id} className="adverColomnBorder">
@@ -88,38 +85,6 @@ var MainRender = React.createClass({
 
     })
     ;
-
-var text = 0;
-
-// var App = React.createClass({
-//
-//         getInitialState: function () {
-//             return {
-//                 state: text
-//             };
-//         },
-//
-//         componentDidMount: function () {
-//             var self = this;
-//             window.ee.addListener('Action', function (item) {
-//                 var newText = text;
-//                 self.setState({state: this.state});
-//                 alert("listener work App");
-//             });
-//         },
-//         componentWillUnmount: function () {
-//             window.ee.removeListener('Action');
-//         },
-//
-        {/*render: function () {*/}
-//             if (1 == 1) {
-//                 alert(" render App")
-//                 return (<MainRender />)
-//             }
-// }
-//
-//     })
-//     ;
 
 ReactDOM.render(
     <MainRender />
