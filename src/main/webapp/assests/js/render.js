@@ -9,6 +9,15 @@ filterApply.onclick = function (event) {
     window.ee.emit('Action', state);
 }
 
+var filterClear = document.getElementById("filterClear");
+
+filterClear.onclick = function (event) {
+    document.getElementById("minYear").value = "";
+    document .getElementById("maxYear").value = "";
+    document.getElementById("minPrice").value = "";
+    document.getElementById("maxPrice").value = "";
+}
+
 
 var MainRender = React.createClass({
 
@@ -37,6 +46,7 @@ var MainRender = React.createClass({
                 }
             }
         },
+
 
         componentDidMount: function () {
             var self = this;
@@ -85,6 +95,8 @@ var MainRender = React.createClass({
 
     })
     ;
+
+var text = 0;
 
 ReactDOM.render(
     <MainRender />

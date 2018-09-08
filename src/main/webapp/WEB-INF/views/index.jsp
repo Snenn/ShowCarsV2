@@ -84,7 +84,7 @@
                 <button class="btn" value="apply" id="filterApply">apply</button>
             </div>
             <div class="container">
-                <button class="btn" value="clear">clear</button>
+                <button class="btn" value="clear" id="filterClear">clear</button>
             </div>
         </div>
     </div>
