@@ -32,7 +32,6 @@ public class REST {
 
     @RequestMapping(value = "adsFilters", method = RequestMethod.GET)
     public String getAllAdsFilter(String minYear, String maxYear, String minPrice, String maxPrice) throws JsonProcessingException {
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+minYear+" "+maxYear+" "+minPrice+" "+maxPrice);
         List adList = adService.getAllWithFilters(minYear, maxYear, minPrice, maxPrice);
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(adList);

@@ -69,7 +69,8 @@ var MainRender = React.createClass({
                 return (
                     <div key={item.id} className="adverColomnBorder">
                         <div className='adverColomnPhoto'>
-                            <img src="assests/pictures/example.jpg" className="adverPhoto"/>
+                            {/*<img src="assests/pictures/example.jpg" className="adverPhoto"/>*/}
+                            <img src={item.photo} className="adverPhoto"/>
                         </div>
                         <div className='adverColomnInfo'>
                             <div className='adverColomnInfoHeader'>

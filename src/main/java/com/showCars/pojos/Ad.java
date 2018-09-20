@@ -22,7 +22,7 @@ public class Ad {
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
     @Column
-    private int photo;
+    private String photo;
     @Column
     private int price;
     @Column
@@ -38,7 +38,7 @@ public class Ad {
     }
 
 
-    public Ad(User user, int photo, int price, String make, String model, int year, String description) {
+    public Ad(User user, String photo, int price, String make, String model, int year, String description) {
         this.user = user;
         this.photo = photo;
         this.price = price;
@@ -65,11 +65,11 @@ public class Ad {
         this.user = user;
     }
 
-    public int getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(int photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
