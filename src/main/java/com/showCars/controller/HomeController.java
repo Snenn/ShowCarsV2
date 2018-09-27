@@ -4,6 +4,7 @@ import com.showCars.Util.Util;
 import com.showCars.pojos.User;
 import com.showCars.pojos.UserRole;
 import com.showCars.services.IUserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,6 +21,8 @@ import java.util.List;
 public class HomeController implements Serializable {
 
     private static final long serialVersionUID = 1324281204513252403L;
+    private Logger logger = Logger.getLogger(HomeController.class);
+
 
     @Autowired
     private IUserService userService;
@@ -37,6 +40,9 @@ public class HomeController implements Serializable {
         } else {
             httpSession.setAttribute("userName", "null");
         }
+        logger.info("user "+user+" opened the main page");
+        logger.debug("test");
+        System.out.println("logggggggggggggggger");
         return "home";
     }
 

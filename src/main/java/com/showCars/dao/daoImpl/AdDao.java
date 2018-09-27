@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 @Repository
 public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
 
-    private static Logger logger = Logger.getLogger(UserDao.class);
+    private static Logger logger = Logger.getLogger(AdDao.class);
 
     @Autowired
     public AdDao(SessionFactory sessionFactory) {
@@ -27,14 +27,12 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
     public List<Ad> getAll() {
         List ads = null;
         try {
-            System.out.println("go in dao");
             Query query = getSession().createQuery("FROM Ad ");
             ads = query.list();
             logger.info("all users:" + ads);
         } catch (HibernateException e) {
             logger.error("Error get users" + e);
         }
-        System.out.println("get from bd: " + ads);
         return ads;
     }
 
@@ -68,6 +66,7 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
             query.setParameter("maxYearQuery", maxYearQuery);
             ads = query.list();
         } catch (HibernateException e) {
+            logger.error(e);
         }
         return ads;
     }

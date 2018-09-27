@@ -17,7 +17,7 @@ import java.util.List;
 @Transactional
 public class UserService implements IUserService {
 
-    private Logger logger = Logger.getLogger(UserService.class.getName());
+    private Logger logger = Logger.getLogger(UserService.class);
     private String messages;
     private User user;
 
@@ -30,6 +30,7 @@ public class UserService implements IUserService {
     public void saveOrUpdate(User user) {
         try {
             userDao.saveOrUpdate(user);
+            logger.info("user "+user.getLogin()+" created");
         } catch (Exception e) {
             logger.error("Error saveOrUpdate in UserService: " + e);
         }

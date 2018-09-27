@@ -63,21 +63,6 @@ public class UserDao extends Dao<User> implements IUserDao<User> {
 
     }
 
-//    public User findByLogin(String login) {
-//        User user = new User();
-//        try {
-//            System.out.println("!!!!!!!!!!!!!login - "+login);
-//            Query query = getSession().createQuery("from User u where u.login = :login");
-//            query.setParameter("login",login);
-//            user = (User) query.uniqueResult();
-//            System.out.println("user!!!!!!!!!!!!!"+user);
-//            logger.info("get user" + user);
-//        } catch (HibernateException e) {
-//            logger.error("Error get user" + e);
-//        }
-//        return user;
-//    }
-
     public User findByLogin(String login) {
         Criteria criteria = createEntityCriteria();
         criteria.add(Restrictions.eq("login", login));
