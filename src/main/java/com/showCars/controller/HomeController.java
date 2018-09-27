@@ -70,9 +70,11 @@ public class HomeController implements Serializable {
         if (userService.findByLogin(user.getLogin()) == null) {
             UserRole userRole=userService.getRoleUser();
             user.setUserRole(userRole);
-            userService.saveOrUpdate(user);
-            model.addAttribute("jsp_message", "successful");
-            return "signUpSucceful";
+            try {
+                userService.saveOrUpdate(user);
+            } catch (Exception e){
+            }
+            return "signUpBad";
         } else {
             model.addAttribute("jsp_message", "this login already exists");
             return "signUp";

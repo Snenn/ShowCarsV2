@@ -31,6 +31,9 @@ public class UserService implements IUserService {
         try {
             userDao.saveOrUpdate(user);
             logger.info("user "+user.getLogin()+" created");
+
+            /*Example handling exceptions*/
+//            throw new Exception();
         } catch (Exception e) {
             logger.error("Error saveOrUpdate in UserService: " + e);
         }

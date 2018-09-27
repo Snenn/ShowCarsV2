@@ -11,5 +11,8 @@
 
     <definition name="signUpSucceful" template="/WEB-INF/views/signUpSucceful.jsp"/>
 
+    <definition name="signUpBad" template="/WEB-INF/views/signUpBad.jsp"/>
+
+
 
 </tiles-definitions>
