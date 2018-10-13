@@ -180,7 +180,7 @@ var Register = React.createClass({
                 <td >{item.id}</td>
                 <td >{item.idUser}</td>
                 <td >{item.userName}</td>
-                <td >{item.date}</td>
+                <td >{new Date(item.date).toUTCString()}</td>
             </tr>);
         });
         return (
