@@ -9,10 +9,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Repository
+@Transactional
 public class UserRoleDao extends Dao<UserRole> implements IUserRoleDao<UserRole> {
 
         private static Logger logger = Logger.getLogger(UserRoleDao.class);
@@ -23,7 +25,7 @@ public class UserRoleDao extends Dao<UserRole> implements IUserRoleDao<UserRole>
         super(sessionFactory);
     }
 
-    public List getAll() {
+    public List getAll() throws Exception {
         List userRoles = null;
         try {
             Query query = getSession().createQuery("FROM userrole ");
@@ -31,6 +33,7 @@ public class UserRoleDao extends Dao<UserRole> implements IUserRoleDao<UserRole>
             logger.info("all userRoles:" + userRoles);
         } catch (HibernateException e) {
             logger.error("Error get userRoles" + e);
+            throw new Exception("Exception in UserRoleDao.getAll, "+e);
         }
         return userRoles;
     }

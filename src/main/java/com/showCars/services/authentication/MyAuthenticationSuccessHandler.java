@@ -58,7 +58,7 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
             }
 
         if (isAdmin) {
-            return "/";
+            return "/admin";
         } else if (isUser) {
             return "/";
         } else {

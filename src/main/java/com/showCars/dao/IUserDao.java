@@ -4,13 +4,9 @@ import java.util.List;
 
 
 public interface IUserDao<TYPE> extends IDao<TYPE> {
-    List<TYPE> getAll() ;
 
-    public TYPE getLastPost();
+    List<TYPE> getAll() throws Exception;
 
     TYPE findByLogin(String login);
 
-    List<TYPE> getAllLimit(int startNumber, int endNumber) ;
-
-    int getCount();
 }

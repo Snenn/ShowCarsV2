@@ -8,12 +8,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
 @Repository
+@Transactional
 public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
 
     private static Logger logger = Logger.getLogger(AdDao.class);
@@ -24,26 +26,12 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
     }
 
     @Override
-    public List<Ad> getAll() {
-        List ads = null;
-        try {
-            Query query = getSession().createQuery("FROM Ad ");
-            ads = query.list();
-            logger.info("all users:" + ads);
-        } catch (HibernateException e) {
-            logger.error("Error get users" + e);
-        }
-        return ads;
-    }
-
-    @Override
-    public List<Ad> getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice) {
+    public List<Ad> getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice) throws Exception {
         int minYearQuery = 0;
         int maxYearQuery = 2050;
         int minPriceQuery = 0;
         int maxPriceQuery = 10000000;
         String regex = "\\d+";
-        Pattern pattern = Pattern.compile(regex);
         if (!Objects.equals(minYear, "") && minYear.matches(regex)) {
             minYearQuery = Integer.parseInt(minYear);
         }
@@ -66,14 +54,23 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
             query.setParameter("maxYearQuery", maxYearQuery);
             ads = query.list();
         } catch (HibernateException e) {
-            logger.error(e);
+            logger.error("Exception in getAllWithFilters, "+e);
+            throw new Exception();
         }
         return ads;
     }
 
     @Override
-    public List<Ad> getAllLimit(int startNumber, int endNumber) {
-        return null;
+    public List<Ad> getAll() throws Exception {
+        List ads = null;
+        try {
+            Query query = getSession().createQuery("FROM Ad");
+            ads = query.list();
+        } catch (HibernateException e) {
+            logger.error("Exception in getAllAd, "+e);
+            throw new Exception();
+        }
+        return ads;
     }
 
 }

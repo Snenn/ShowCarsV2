@@ -5,6 +5,8 @@
 
     <definition name="home" template="/WEB-INF/views/index.jsp"/>
 
+    <definition name="admin" template="/WEB-INF/views/admin.jsp"/>
+
     <definition name="showCars" template="/WEB-INF/views/responseServlet.jsp"/>
 
     <definition name="signUp" template="/WEB-INF/views/signUp.jsp"/>

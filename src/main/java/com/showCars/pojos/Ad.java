@@ -34,9 +34,6 @@ public class Ad {
     @Column
     private String description;
 
-    public Ad() {
-    }
-
 
     public Ad(User user, String photo, int price, String make, String model, int year, String description) {
         this.user = user;
@@ -48,6 +45,8 @@ public class Ad {
         this.description = description;
     }
 
+    public Ad() {
+    }
 
     public int getId() {
         return id;

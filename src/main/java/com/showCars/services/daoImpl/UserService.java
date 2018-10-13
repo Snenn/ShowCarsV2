@@ -27,15 +27,17 @@ public class UserService implements IUserService {
     IUserRoleDao userRoleDao;
 
     @Override
-    public void saveOrUpdate(User user) {
+    public void saveOrUpdate(User user) throws Exception {
         try {
-            userDao.saveOrUpdate(user);
-            logger.info("user "+user.getLogin()+" created");
-
             /*Example handling exceptions*/
 //            throw new Exception();
+
+            userDao.saveOrUpdate(user);
+            logger.info("user " + user.getLogin() + " created");
+
         } catch (Exception e) {
             logger.error("Error saveOrUpdate in UserService: " + e);
+            throw new Exception(e);
         }
     }
 
@@ -51,17 +53,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public List getUsersLimit(int startNumber, int countFields) {
-        return (List<User>) userDao.getAllLimit(startNumber, countFields);
-    }
-
-    @Override
-    public int getCountUsers() {
-        return userDao.getCount();
-    }
-
-    @Override
-    public List getAll() {
+    public List getAll() throws Exception {
         return userDao.getAll();
     }
 

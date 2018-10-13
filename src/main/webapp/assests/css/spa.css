@@ -166,3 +166,23 @@
 .clickMe:target {
     display: block;
 }
+
+
+.btn {
+    background-color: #2dff22;
+    color: black;
+    font-size: 16px;
+    padding: 12px 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 40px;
+    margin-top: 5px;
+    text-decoration: none;
+    white-space: pre;
+}
+.btn:hover {
+    background-color: #8ef497;
+    color: black;
+}

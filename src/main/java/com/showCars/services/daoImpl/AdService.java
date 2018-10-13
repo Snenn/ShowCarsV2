@@ -4,13 +4,11 @@ import com.showCars.pojos.Ad;
 import com.showCars.services.IAdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.util.List;
 
 @Service
-@Transactional
 public class AdService implements IAdService {
 
     @Autowired
@@ -22,13 +20,13 @@ public class AdService implements IAdService {
     }
 
     @Override
-    public List getAll() {
-        return adDao.getAll();
+    public List getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice) throws Exception {
+        return adDao.getAllWithFilters(minYear, maxYear, minPrice, maxPrice);
     }
 
     @Override
-    public List getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice) {
-        return adDao.getAllWithFilters(minYear, maxYear, minPrice, maxPrice);
+    public List getAll() throws Exception {
+        return adDao.getAll();
     }
 
     @Override

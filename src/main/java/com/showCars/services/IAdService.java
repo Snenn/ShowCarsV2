@@ -10,8 +10,8 @@ public interface IAdService<TYPE> extends IDao<TYPE> {
 
     void saveOrUpdate(Ad ad);
 
-    List getAll ();
+    List getAllWithFilters (String minYear, String maxYear, String minPrice, String maxPrice) throws Exception;
 
-    List getAllWithFilters (String minYear, String maxYear, String minPrice, String maxPrice);
+    List getAll () throws Exception;
 
 }

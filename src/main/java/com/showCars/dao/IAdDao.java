@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface IAdDao <TYPE> extends IDao<TYPE>  {
 
-    List<TYPE> getAll() ;
+    List<TYPE> getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice) throws Exception;
 
-    List<TYPE> getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice);
+    List<TYPE> getAll() throws Exception;
 
-    List<TYPE> getAllLimit(int startNumber, int endNumber) ;
+
 }

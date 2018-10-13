@@ -15,36 +15,6 @@
 
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
-    <!--<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">-->
-        <!--<property name="poolName" value="springHikariCP" />-->
-        <!--<property name="connectionTestQuery" value="SELECT 1" />-->
-        <!--<property name="dataSourceClassName"  value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource" />-->
-        <!--<property name="dataSourceProperties">-->
-            <!--<props>-->
-                <!--<prop key="url">jdbc:mysql://us-cdbr-iron-east-05.cleardb.net:3306/heroku_555437bd0a94962</prop>-->
-                <!--<prop key="user">bdee5f193ec11c</prop>-->
-                <!--<prop key="password">ac321792</prop>-->
-                <!--<prop key="useUnicode">true</prop>-->
-                <!--<prop key="characterEncoding">UTF-8</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
-
-    <!--<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">-->
-        <!--<property name="poolName" value="springHikariCP" />-->
-        <!--<property name="connectionTestQuery" value="SELECT 1" />-->
-        <!--<property name="dataSourceClassName"  value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource" />-->
-        <!--<property name="dataSourceProperties">-->
-            <!--<props>-->
-                <!--<prop key="url">jdbc:mysql://localhost:3306/mvc</prop>-->
-                <!--<prop key="user">root</prop>-->
-                <!--<prop key="password">Root</prop>-->
-                <!--<prop key="useUnicode">true</prop>-->
-                <!--<prop key="characterEncoding">UTF-8</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
-
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="url" value="jdbc:mysql://us-cdbr-iron-east-05.cleardb.net:3306/heroku_555437bd0a94962"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -56,42 +26,6 @@
         <property name="testOnBorrow" value="true"/>
         <property name="validationQuery" value="SELECT 1"/>
     </bean>
-
-    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">-->
-        <!--<property name="url" value="jdbc:mysql://localhost:3306/mvc"/>-->
-        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
-        <!--<property name="username" value="root"/>-->
-        <!--<property name="password" value="Root"/>-->
-        <!--<property name="initialSize" value="1"/>-->
-        <!--<property name="maxActive" value="1"/>-->
-
-    <!--</bean>-->
-
-    <!--<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">-->
-        <!--<constructor-arg ref="hikariConfig" />-->
-    <!--</bean>-->
-
-    <!--<bean id="sessionFactory"-->
-          <!--class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">-->
-        <!--<property name="dataSource" ref="dataSource"/>-->
-        <!--<property name="packagesToScan">-->
-            <!--<list>-->
-                <!--<value>com.showCars.pojos</value>-->
-            <!--</list>-->
-        <!--</property>-->
-
-        <!--<property name="hibernateProperties">-->
-            <!--<props>-->
-                <!--<prop key="hibernate.show_sql">false</prop>-->
-                <!--<prop key="debug">false</prop>-->
-                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>-->
-                <!--<prop key="connection.isolation">2</prop>-->
-                <!--<prop key="hibernate.cglib.use_reflection_optimizer">true</prop>-->
-                <!--<prop key="hibernate.hbm2ddl.auto">validate</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
-
 
 
     <bean id="sessionFactory"

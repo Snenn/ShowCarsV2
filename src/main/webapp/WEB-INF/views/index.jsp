@@ -51,30 +51,7 @@
                 <input class="inputMenu" type="text" id="minPrice" name="minPrice" size="20px"> - <input
                     class="inputMenu" type="text" id="maxPrice" name="maxPrice">
             </div>
-            <%--<div class="">--%>
-            <%--<div class="">--%>
-            <%--<div>make</div>--%>
-            <%--</div>--%>
-            <%--<div>--%>
-            <%--<select class="selectMenu" id="make" name="make">--%>
-            <%--<option value="1">honda</option>--%>
-            <%--<option value="2">mercedes-benz</option>--%>
-            <%--<option value="3">dodge</option>--%>
-            <%--</select>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="">--%>
-            <%--<div class="">--%>
-            <%--<div>model</div>--%>
-            <%--</div>--%>
-            <%--<div>--%>
-            <%--<select class="selectMenu" id="model" name="model">--%>
-            <%--<option value="1">civik</option>--%>
-            <%--<option value="2">accord</option>--%>
-            <%--<option value="3">crv</option>--%>
-            <%--</select>--%>
-            <%--</div>--%>
-            <%--</div>--%>
+
             <div>
                 <div>year</div>
                 <input class="inputMenu" type="text" id="minYear" name="minYear" size="20px"> - <input

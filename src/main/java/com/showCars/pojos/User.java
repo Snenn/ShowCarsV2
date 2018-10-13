@@ -1,6 +1,7 @@
 package com.showCars.pojos;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -29,10 +30,13 @@ public class User implements Serializable {
     @Column
     private String email;
     @Column
+    @JsonIgnore
     private String password;
     @ManyToOne
     @JoinColumn
+    @JsonIgnore
     private UserRole userRole;
+    @JsonIgnore
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Ad> ads = new ArrayList();
 
