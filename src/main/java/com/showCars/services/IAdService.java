@@ -8,10 +8,13 @@ import java.util.List;
 
 public interface IAdService<TYPE> extends IDao<TYPE> {
 
-    void saveOrUpdate(Ad ad);
+    void saveOrUpdate(Ad ad) throws Exception;
 
     List getAllWithFilters (String minYear, String maxYear, String minPrice, String maxPrice) throws Exception;
 
     List getAll () throws Exception;
+
+    List getMyAd (int id) throws Exception;
+
 
 }

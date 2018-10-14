@@ -7,6 +7,10 @@
 
     <definition name="admin" template="/WEB-INF/views/admin.jsp"/>
 
+    <definition name="createAd" template="/WEB-INF/views/createAd.jsp"/>
+
+    <definition name="user" template="/WEB-INF/views/user.jsp"/>
+
     <definition name="showCars" template="/WEB-INF/views/responseServlet.jsp"/>
 
     <definition name="signUp" template="/WEB-INF/views/signUp.jsp"/>

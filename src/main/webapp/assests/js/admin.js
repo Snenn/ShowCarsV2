@@ -31,7 +31,8 @@ var Ads = React.createClass({
         var self = this;
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        var url = 'https://showcarsv2.herokuapp.com/ads'
+        // var url = 'https://showcarsv2.herokuapp.com/ads'
+        var url = 'http://localhost:8080/ads'
         req.open('GET', url, true);
         req.send();
         var json;
@@ -92,14 +93,14 @@ var Users = React.createClass({
         var self = this;
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        var url = 'https://showcarsv2.herokuapp.com/users'
+        // var url = 'https://showcarsv2.herokuapp.com/users'
+        var url = 'http://localhost:8080/users'
         req.open('GET', url, true);
         req.send();
         var json;
         req.onreadystatechange = function () {
             if (req.readyState === 4 && req.status === 200) {
                 json = req.response;
-                alert(json);
                 self.setState({list: json});
             }
         }
@@ -114,25 +115,25 @@ var Users = React.createClass({
 
         const items = this.state.list.map((item) => {
             return (<tr key={item.id}>
-                <td >{item.id}</td>
-                <td >{item.surname}</td>
-                <td >{item.name}</td>
-                <td >{item.login}</td>
-                <td >{item.email}</td>
+                <td className="tdUsers">{item.id}</td>
+                <td className="tdUsers">{item.surname}</td>
+                <td className="tdUsers">{item.name}</td>
+                <td className="tdUsers">{item.login}</td>
+                <td className="tdUsers">{item.email}</td>
 
             </tr>);
         });
         return (
             <div>
                 <div>
-                    <table>
+                    <table className="tableStyle">
                         <tbody>
                         <tr>
-                            <td >id</td>
-                            <td >surname</td>
-                            <td >name</td>
-                            <td >login</td>
-                            <td >email</td>
+                            <td className="tdUsersHead">id</td>
+                            <td className="tdUsersHead">surname</td>
+                            <td className="tdUsersHead">name</td>
+                            <td className="tdUsersHead">login</td>
+                            <td className="tdUsersHead">email</td>
                         </tr>
                         {items}
                         </tbody>
@@ -156,14 +157,14 @@ var Register = React.createClass({
         var self = this;
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        var url = 'https://showcarsv2.herokuapp.com/records'
+        // var url = 'https://showcarsv2.herokuapp.com/records'
+        var url = 'http://localhost:8080/records'
         req.open('GET', url, true);
         req.send();
         var json;
         req.onreadystatechange = function () {
             if (req.readyState === 4 && req.status === 200) {
                 json = req.response;
-                alert(json);
                 self.setState({list: json});
             }
         }
@@ -177,22 +178,22 @@ var Register = React.createClass({
 
         const items = this.state.list.map((item) => {
             return (<tr key={item.id}>
-                <td >{item.id}</td>
-                <td >{item.idUser}</td>
-                <td >{item.userName}</td>
-                <td >{new Date(item.date).toUTCString()}</td>
+                <td className="tdRecords">{item.id}</td>
+                <td className="tdRecords">{item.idUser}</td>
+                <td className="tdRecords">{item.userName}</td>
+                <td className="tdRecords">{new Date(item.date).toUTCString()}</td>
             </tr>);
         });
         return (
             <div>
                 <div>
-                    <table>
+                    <table className="tableStyle">
                         <tbody>
                         <tr>
-                            <td >id</td>
-                            <td >idUser</td>
-                            <td >userName</td>
-                            <td >date</td>
+                            <td className="tdRecordsHead">id</td>
+                            <td className="tdRecordsHead">idUser</td>
+                            <td className="tdRecordsHead">userName</td>
+                            <td className="tdRecordsHead">date</td>
                         </tr>
                         {items}
                         </tbody>
@@ -230,7 +231,7 @@ var App = React.createClass({
         if (text.trim() == "ads") {
             return (
                 <Ads />
-            )
+            );
 
         }
         if (text.trim() == "users") {

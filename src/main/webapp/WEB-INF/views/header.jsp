@@ -13,8 +13,8 @@
         </div>
     </div>
 
-    <div style="float: right; width: 30%; height: 100px;">
-        <c:choose>
+    <div style="float: right; width: 30%; height: 80%;">
+        <div><c:choose>
             <c:when test="${userName=='null'}">
                 <div class="form">
                     <form class="login-form" method="post" action="${loginUrl}">
@@ -30,14 +30,15 @@
             </c:when>
             <c:otherwise>
                 <div style="margin: 5% 5%;">
-                    <div style="float: left; width: 70%; height: 100%">
-                        <div style="text-align: center; width: 100%">Hi, ${userName}</div>
-                        <div style="text-align: center; width: 100%"></div>
+                    <div style="float: left; width: 70%; height: 80%;">
+                        <div style="text-align: center; width: 100%; margin-top: 3%">Hi, ${userName}</div>
+
                         <div>
                             <c:url var="logoutUrl" value="/logout"/>
                             <form action="${logoutUrl}"
                                   method="post" class="login-form">
-                                <button type="submit"
+
+                                <button class="btn" type="submit"
                                         value="Log out"> Logout
                                 </button>
                                 <input type="hidden"
@@ -45,15 +46,27 @@
                                        value="${_csrf.token}"/>
                             </form>
                         </div>
+
                     </div>
-                    <div style="; float: left; width: 30%; height: 100%"><img
+                    <div style="; float: left; width: 30%; height: 80%"><img
                             style="align-content: center; width: 100%; height: 100px;"
                             src="assests/pictures/user.jpg"
                     />
                     </div>
                 </div>
             </c:otherwise>
-        </c:choose>
-
+        </c:choose></div>
+        <div style="align-content: center; width: 100%; text-align: center;">
+            <c:if test="${userRole=='ADMIN'}">
+                <a href="/admin">admin page</a>
+                <a href="/">main page</a>
+            </c:if>
+            <c:if test="${userRole=='USER'}">
+                <a href="/user">user page</a>
+                <a href="/">main page</a>
+            </c:if>
+        </div>
     </div>
+
+
 </div>

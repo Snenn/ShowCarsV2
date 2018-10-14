@@ -43,11 +43,26 @@ public class REST {
     }
 
     @RequestMapping(value = "ads", method = RequestMethod.GET)
-    public String getAllAdsFilter() throws JsonProcessingException {
+    public String getAllAds() throws JsonProcessingException {
 
         List adList = null;
         try {
             adList = adService.getAll();
+        } catch (Exception e) {
+            logger.error("Exception in get ads, " + e);
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(adList);
+        return json;
+
+    }
+
+    @RequestMapping(value = "myAds", method = RequestMethod.GET)
+    public String getMyAds() throws JsonProcessingException {
+        User user = userService.findByLogin(Util.getPrincipal());
+        List adList = null;
+        try {
+            adList = adService.getMyAd(user.getId());
         } catch (Exception e) {
             logger.error("Exception in get ads, " + e);
         }

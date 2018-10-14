@@ -73,4 +73,18 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
         return ads;
     }
 
+    @Override
+    public List<Ad> getMyAd(int id) throws Exception {
+        List ads = null;
+        try {
+            Query query = getSession().createQuery("from Ad where user.id=:id");
+            query.setParameter("id", id);
+            ads = query.list();
+        } catch (HibernateException e) {
+            logger.error("Exception in getMyAd, "+e);
+            throw new Exception();
+        }
+        return ads;
+    }
+
 }

@@ -8,5 +8,8 @@ public interface IAdDao <TYPE> extends IDao<TYPE>  {
 
     List<TYPE> getAll() throws Exception;
 
+    List<TYPE> getMyAd(int id) throws Exception;
+
+
 
 }

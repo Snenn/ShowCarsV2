@@ -2,7 +2,7 @@
     margin-top: -10px;
     margin-left: 30px;
     width: 95%;
-    height: 3500px;
+    height: auto;
     background-color: whitesmoke;
 }
 
@@ -99,6 +99,38 @@
     box-sizing: border-box;
 }
 
+.inputAd {
+    width: 100%;
+    padding: 2px 12px;
+    box-sizing: border-box;
+}
+
+.inputAdDesc {
+    width: 100%;
+    height: 50%;
+    padding: 2px 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.ad1{
+    float: left;
+    width: 40%;
+    height: 80%;
+}
+.ad2{
+    float: left;
+    width: 60%;
+    height: 80%;
+}
+
+.createAd{
+    margin-left: 30%;
+    margin-top: 5%;
+    height: 300px;
+    width: 600px;
+}
+
 .selectMenu {
     width: 86%;
     padding: 2px 12px;
@@ -186,3 +218,43 @@
     background-color: #8ef497;
     color: black;
 }
+
+.tdUsers{
+    width: 20%;
+    text-align: center;
+    border: 1px solid black;
+
+}
+
+.tdRecords{
+    width: 25%;
+    text-align: center;
+    border: 1px solid black;
+
+}
+
+.tdUsersHead{
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+
+}
+
+.tdRecordsHead{
+    width: 25%;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+
+}
+
+.tableStyle{
+    width: 90%;
+    border: 1px solid black;
+}
+
+.inputAd{
+    width: 20%;
+}
+
