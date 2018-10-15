@@ -47,7 +47,8 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
 
         List ads = null;
         try {
-            Query query = getSession().createQuery("FROM Ad where price >= :minPriceQuery and price <= :maxPriceQuery and year >= :minYearQuery and year <= :maxYearQuery ");
+            Query query = getSession().createQuery("FROM Ad where price >= :minPriceQuery and price <= :maxPriceQuery " +
+                    "and year >= :minYearQuery and year <= :maxYearQuery order by id desc ");
             query.setParameter("minPriceQuery", minPriceQuery);
             query.setParameter("maxPriceQuery", maxPriceQuery);
             query.setParameter("minYearQuery", minYearQuery);
@@ -77,7 +78,7 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
     public List<Ad> getMyAd(int id) throws Exception {
         List ads = null;
         try {
-            Query query = getSession().createQuery("from Ad where user.id=:id");
+            Query query = getSession().createQuery("from Ad where user.id=:id order by id desc");
             query.setParameter("id", id);
             ads = query.list();
         } catch (HibernateException e) {

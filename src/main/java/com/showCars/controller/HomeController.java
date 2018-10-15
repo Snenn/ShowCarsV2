@@ -1,8 +1,5 @@
 package com.showCars.controller;
 
-import com.cloudinary.Cloudinary;
-import com.cloudinary.utils.ObjectUtils;
-import com.showCars.pojos.Ad;
 import com.showCars.pojos.Record;
 import com.showCars.pojos.User;
 import com.showCars.pojos.UserRole;
@@ -21,13 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
-import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
-import java.nio.file.Files;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Map;
 
 @Controller
 public class HomeController implements Serializable {
@@ -42,10 +36,7 @@ public class HomeController implements Serializable {
     @Autowired
     private IAdService adService;
 
-    Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
-            "cloud_name", "hxqjawdta",
-            "api_key", "178688611992431",
-            "api_secret", "B925PaAvSXrlqsD1VXcgf1nfrKA"));
+
 
     @RequestMapping(value = {""}, method = {RequestMethod.POST, RequestMethod.GET})
     public String homePage2(HttpSession httpSession) {
@@ -109,33 +100,13 @@ public class HomeController implements Serializable {
             @RequestParam String model, ModelMap modelMap) throws IOException {
 
         User user = userService.findByLogin(Util.getPrincipal());
-        String urlPhoto = null;
-        Map uploadResult = null;
-
+        modelMap.addAttribute("message", "");
         try {
-
-            File f= Files.createTempFile("temp", photo.getOriginalFilename()).toFile();
-            photo.transferTo(f);
-
-            uploadResult = cloudinary.uploader().upload(f, ObjectUtils.emptyMap());
-            urlPhoto = (String) uploadResult.get("url");
-        } catch (IOException e) {
-            logger.error("error with upload photo to cloudinary");
-        }
-
-        Ad ad = new Ad();
-        ad.setMake(make);
-        ad.setModel(model);
-        ad.setYear(Integer.parseInt(year));
-        ad.setPrice(Integer.parseInt(price));
-        ad.setDescription(description);
-        ad.setPhoto(urlPhoto);
-        ad.setUser(user);
-
-        try {
-            adService.saveOrUpdate(ad);
+            adService.saveOrUpdate(user, make, model, price, year, description, photo);
+            modelMap.addAttribute("message", "Ad had been saved");
         } catch (Exception e) {
-            logger.error(ad+" had not been saved");
+            logger.error("Ad had not been saved");
+            modelMap.addAttribute("message", "ad had not been saved");
         }
 
         return "createAd";

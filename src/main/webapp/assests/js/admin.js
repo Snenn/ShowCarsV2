@@ -93,8 +93,8 @@ var Users = React.createClass({
         var self = this;
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        // var url = 'https://showcarsv2.herokuapp.com/users'
-        var url = 'http://localhost:8080/users'
+        var url = 'https://showcarsv2.herokuapp.com/users'
+        // var url = 'http://localhost:8080/users'
         req.open('GET', url, true);
         req.send();
         var json;
@@ -157,8 +157,8 @@ var Register = React.createClass({
         var self = this;
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        // var url = 'https://showcarsv2.herokuapp.com/records'
-        var url = 'http://localhost:8080/records'
+        var url = 'https://showcarsv2.herokuapp.com/records'
+        // var url = 'http://localhost:8080/records'
         req.open('GET', url, true);
         req.send();
         var json;

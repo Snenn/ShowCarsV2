@@ -50,8 +50,8 @@ var MyAds = React.createClass({
         var self = this;
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        // var url = 'https://showcarsv2.herokuapp.com/ads'
-        var url = 'http://localhost:8080/myAds'
+        var url = 'https://showcarsv2.herokuapp.com/myAds'
+        // var url = 'http://localhost:8080/myAds'
         req.open('GET', url, true);
         req.send();
         var json;

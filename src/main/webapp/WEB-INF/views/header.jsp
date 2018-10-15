@@ -1,6 +1,6 @@
 <e:url value="/j_spring_security_check" var="loginUrl"/>
 <link rel="stylesheet" type="text/css" href="../../assests/css/formLogin.css">
-<div style="width: 100%; height: 150px; background-color: white">
+<div style="width: 100%; height: 170px; background-color: white">
     <div style="float: left; width: 70%; height: 100px; margin-top: 10px;">
         <div style="">
             <div style="float: right; width: 35%; height: 30%;text-align: center; font-size: 300%;

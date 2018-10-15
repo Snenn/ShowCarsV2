@@ -38,6 +38,5 @@
 </div>
 
 <script type="text/babel" src="../../assests/js/user.js"></script>
-<script type="text/babel" src="../../assests/js/saveAd.js"></script>
 
 </body>

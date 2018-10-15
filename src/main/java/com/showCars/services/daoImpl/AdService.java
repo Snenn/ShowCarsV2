@@ -1,14 +1,22 @@
 package com.showCars.services.daoImpl;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import com.showCars.dao.IAdDao;
 import com.showCars.pojos.Ad;
+import com.showCars.pojos.User;
 import com.showCars.services.IAdService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
+import java.nio.file.Files;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AdService implements IAdService {
@@ -19,10 +27,42 @@ public class AdService implements IAdService {
     @Autowired
     IAdDao adDao;
 
-    @Override
-    public void saveOrUpdate(Ad ad) throws Exception {
-        try {
+    Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
+            "cloud_name", "hxqjawdta",
+            "api_key", "178688611992431",
+            "api_secret", "B925PaAvSXrlqsD1VXcgf1nfrKA"));
 
+    @Override
+    public void saveOrUpdate(User user, String make, String model,
+                             String price, String year, String description, MultipartFile photo) throws Exception {
+
+        String urlPhoto = null;
+        Map uploadResult = null;
+
+        if (!photo.isEmpty()) {
+            try {
+
+                File f = Files.createTempFile("temp", photo.getOriginalFilename()).toFile();
+                photo.transferTo(f);
+
+                uploadResult = cloudinary.uploader().upload(f, ObjectUtils.emptyMap());
+                urlPhoto = (String) uploadResult.get("url");
+            } catch (IOException e) {
+                logger.error("error with upload photo to cloudinary");
+            }
+
+        }
+
+        Ad ad = new Ad();
+        ad.setMake(make);
+        ad.setModel(model);
+        if (!year.isEmpty())ad.setYear(Integer.parseInt(year));
+        if (!price.isEmpty())ad.setPrice(Integer.parseInt(price));
+        ad.setDescription(description);
+        ad.setPhoto(urlPhoto);
+        ad.setUser(user);
+
+        try {
             adDao.saveOrUpdate(ad);
             logger.info("ad created");
 
