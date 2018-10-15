@@ -100,12 +100,17 @@
         /></div>
         <div style="text-align: left">
             I'm using tools here:<br>
-            Java, JSP, Spring, Spring Security, Hibernate, MySQL, CSS, JS, React<br>
+            Back end: Java,  Spring, Hibernate, MySQL,  manage image with Cloudinary<br>
+            Front end: JSP, CSS, JavaScript, dynamic part render with ReactJS<br>
             Build - Maven<br>
             Control version - Git<br>
             Deploy on heroku<br>
             <br>
-            You can use login: Mik password: 1 or create self new user
+            Spring security use 2 roles - USER, ADMIN
+            for example
+            Admin: login - admin, password - admin
+            User:  login - Mik,   password - 1
+            also you can create new User
         </div>
 
     </div>
