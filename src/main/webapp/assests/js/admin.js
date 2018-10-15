@@ -31,8 +31,8 @@ var Ads = React.createClass({
         var self = this;
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        // var url = 'https://showcarsv2.herokuapp.com/ads'
-        var url = 'http://localhost:8080/ads'
+        var url = 'https://showcarsv2.herokuapp.com/ads'
+        // var url = 'http://localhost:8080/ads'
         req.open('GET', url, true);
         req.send();
         var json;
