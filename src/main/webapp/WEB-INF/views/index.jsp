@@ -106,11 +106,11 @@
             Control version - Git<br>
             Deploy on heroku<br>
             <br>
-            Spring security use 2 roles - USER, ADMIN
-            for example
-            Admin: login - admin, password - admin
-            User:  login - Mik,   password - 1
-            also you can create new User
+            Spring security use 2 roles - USER, ADMIN<br>
+            for example<br>
+            Admin: login - admin, password - admin<br>
+            User:  login - Mik,   password - 1<br>
+            also you can create new User<br>
         </div>
 
     </div>
