@@ -43,7 +43,7 @@
         <div class="ad2">
             <div>description</div>
             <textarea rows="6" type="text" id="description" name="description" class='inputAdDesc'></textarea>
-            <input type="file" id="photo" name="photo" value="choose image">
+            <input type="file" accept="image/*" id="photo" name="photo" value="choose image">
         </div>
         <div>
             <button class="btn" type="submit">save Ad</button>
