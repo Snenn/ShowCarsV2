@@ -4,6 +4,7 @@ import com.showCars.pojos.Record;
 import com.showCars.pojos.User;
 import com.showCars.pojos.UserRole;
 import com.showCars.services.IAdService;
+import com.showCars.services.IManufacturerService;
 import com.showCars.services.IRecordService;
 import com.showCars.services.IUserService;
 import com.showCars.util.Util;
@@ -22,6 +23,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class HomeController implements Serializable {
@@ -35,29 +37,40 @@ public class HomeController implements Serializable {
     private IRecordService recordService;
     @Autowired
     private IAdService adService;
+    @Autowired
+    private IManufacturerService manufacturerService;
 
 
 
     @RequestMapping(value = {""}, method = {RequestMethod.POST, RequestMethod.GET})
-    public String homePage2(HttpSession httpSession) {
+    public String homePage2(ModelMap modelMap) {
         User user = userService.findByLogin(Util.getPrincipal());
+        List manufacturers = null;
         if (user != null) {
-            httpSession.setAttribute("userName", user.getName() + " " + user.getSurname());
-            httpSession.setAttribute("userRole", user.getUserRole().getNameRoleUser());
+            modelMap.addAttribute("userName", user.getName() + " " + user.getSurname());
+            modelMap.addAttribute("userRole", user.getUserRole().getNameRoleUser());
             try {
                 recordService.saveOrUpdate(new Record(user.getId(), user.getName(), Calendar.getInstance().getTime()));
             } catch (Exception e) {
                 logger.error("records no saved");
             }
         } else {
-            httpSession.setAttribute("userName", "null");
-            httpSession.setAttribute("userRole", "null");
+            modelMap.addAttribute("userName", "null");
+            modelMap.addAttribute("userRole", "null");
             try {
                 recordService.saveOrUpdate(new Record(0, "not authorized", new Date()));
             } catch (Exception e) {
                 logger.error("records no saved");
             }
         }
+
+        try {
+            manufacturers = manufacturerService.getAll();
+            modelMap.addAttribute("manufacturers", manufacturers);
+        } catch (Exception e) {
+            logger.error("Exception in get manufacturers, " + e);
+        }
+
         logger.info("user " + user + " opened the main page");
         return "home";
     }
@@ -89,7 +102,14 @@ public class HomeController implements Serializable {
     }
 
     @RequestMapping(value = {"/user/createAd"}, method = {RequestMethod.POST, RequestMethod.GET})
-    public String createAd(HttpSession httpSession) {
+    public String createAd(ModelMap modelMap) {
+        List manufacturers = null;
+        try {
+            manufacturers = manufacturerService.getAll();
+        } catch (Exception e) {
+            logger.error("/user/createAd - Exception in get manufacturers, " + e);
+        }
+        modelMap.addAttribute("manufacturers", manufacturers);
         return "createAd";
     }
 

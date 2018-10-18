@@ -73,8 +73,8 @@ public class AdService implements IAdService {
     }
 
     @Override
-    public List getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice) throws Exception {
-        return adDao.getAllWithFilters(minYear, maxYear, minPrice, maxPrice);
+    public List getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice, String make, String model) throws Exception {
+        return adDao.getAllWithFilters(minYear, maxYear, minPrice, maxPrice, make, model);
     }
 
     @Override

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.showCars.pojos.User;
 import com.showCars.services.IAdService;
+import com.showCars.services.IModelService;
 import com.showCars.services.IRecordService;
 import com.showCars.services.IUserService;
 import com.showCars.util.Util;
@@ -25,14 +26,18 @@ public class REST {
     private IUserService userService;
     @Autowired
     private IRecordService recordService;
+    @Autowired
+    private IModelService modelService;
+
     private Logger logger = Logger.getLogger(HomeController.class);
 
 
     @RequestMapping(value = "adsFilters", method = RequestMethod.GET)
-    public String getAllAdsFilter(String minYear, String maxYear, String minPrice, String maxPrice) throws JsonProcessingException {
+    public String getAllAdsFilter(String minYear, String maxYear, String minPrice, String maxPrice, String make, String model) throws JsonProcessingException {
+
         List adList = null;
         try {
-            adList = adService.getAllWithFilters(minYear, maxYear, minPrice, maxPrice);
+            adList = adService.getAllWithFilters(minYear, maxYear, minPrice, maxPrice, make, model);
         } catch (Exception e) {
             logger.error("Exception in get ads, " + e);
         }
@@ -111,6 +116,20 @@ public class REST {
             }
         }
         return null;
+
+    }
+
+    @RequestMapping(value = "getModels", method = RequestMethod.GET)
+    public String getManufacturers() throws JsonProcessingException {
+        List models = null;
+        try {
+            models = modelService.getAll();
+        } catch (Exception e) {
+            logger.error("Exception in get models, " + e);
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(models);
+        return json;
 
     }
 

@@ -21,12 +21,12 @@
 <body>
 <script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
-<script src="../../assests/js/react.js"></script>
-<script src="../../assests/js/react-dom.js"></script>
-<script src="../../assests/js/browser.min.js"></script>
-<script src="../../assests/js/EventEmitter.js"></script>
-<script src="../../assests/js/sweetalert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../../assests/js/sweetalert.css">
+<script src="../../assests/js/library/react.js"></script>
+<script src="../../assests/js/library/react-dom.js"></script>
+<script src="../../assests/js/library/browser.min.js"></script>
+<script src="../../assests/js/library/EventEmitter.js"></script>
+<script src="../../assests/js/library/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../assests/js/library/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="../../assests/css/spa.css" media="all">
 <link rel="stylesheet" type="text/css" href="../../assests/css/buttonClickMe.css" media="all">
 <div class="main">
@@ -47,15 +47,30 @@
         </div>
         <div style="margin-top: 20%;margin-left: 10%">
             <div>
+                <div>make</div>
+                <select class="selMenu" id="selectMake" onchange="changeFunc();">
+                    <option value="0">any</option>
+                    <c:forEach items="${manufacturers}" var="manufacturer">
+                        <option value="${manufacturer.id}">${manufacturer.name}</option>
+                    </c:forEach>
+                </select>
+            </div>
+            <div>
+                <div>model</div>
+                <select class="selMenu" id="selectModel">
+                    <option value="0">any</option>
+                </select>
+            </div>
+            <div>
                 <div>price</div>
-                <input class="inputMenu" type="text" id="minPrice" name="minPrice" size="20px"> - <input
-                    class="inputMenu" type="text" id="maxPrice" name="maxPrice">
+                <input class="inputMenu" type="text" id="minPrice" name="minPrice" size="20px" onkeypress="return checkNumbers()"> - <input
+                    class="inputMenu" type="text" id="maxPrice" name="maxPrice" onkeypress="return checkNumbers()">
             </div>
 
             <div>
                 <div>year</div>
-                <input class="inputMenu" type="text" id="minYear" name="minYear" size="20px"> - <input
-                    class="inputMenu" type="text" id="maxYear" name="maxYear">
+                <input class="inputMenu" type="text" id="minYear" name="minYear" size="20px" onkeypress="return checkNumbers()"> - <input
+                    class="inputMenu" type="text" id="maxYear" name="maxYear" onkeypress="return checkNumbers()">
             </div>
             <div class="container">
                 <button class="btn" value="apply" id="filterApply">apply</button>
@@ -116,4 +131,94 @@
     </div>
 </a>
 <script type="text/babel" src="../../assests/js/render.js"></script>
+<script>
+    minPrice.oncut = minPrice.oncopy = minPrice.onpaste = function(event) {
+        return false;
+    };
+    maxPrice.oncut = maxPrice.oncopy = maxPrice.onpaste = function(event) {
+        return false;
+    };
+    minYear.oncut = minYear.oncopy = minYear.onpaste = function(event) {
+        return false;
+    };
+    maxYear.oncut = maxYear.oncopy = maxYear.onpaste = function(event) {
+        return false;
+    };
+
+    function checkNumbers(e) {
+
+        e = e || event;
+
+        if (e.ctrlKey || e.altKey) return;
+
+        var chr = getChar(e);
+
+        // с null надо осторожно в неравенствах, т.к. например null >= '0' => true!
+        // на всякий случай лучше вынести проверку chr == null отдельно
+        if (chr == null) return;
+
+        if (chr < '0' || chr > '9') {
+            return false;
+        }
+
+    }
+
+    function getChar(event) {
+        if (event.which == null) {
+            if (event.keyCode < 32) return null;
+            return String.fromCharCode(event.keyCode) // IE
+        }
+
+        if (event.which != 0 && event.charCode != 0) {
+            if (event.which < 32) return null;
+            return String.fromCharCode(event.which) // остальные
+        }
+
+        return null; // специальная клавиша
+    }
+</script>
+<script>
+    function changeFunc() {
+        var selectBox = document.getElementById("selectMake");
+        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+        var url = 'http://localhost:8080/getModels';
+        req.open('GET', url, true);
+        req.send();
+        var json;
+        req.onreadystatechange = function () {
+            if (req.readyState === 4 && req.status === 200) {
+                json = req.response;
+                writeOptions(json, selectedValue);
+            }
+        }
+
+
+        function writeOptions(data, id) {
+
+            var root = document.getElementById("selectModel");
+            while (root.hasChildNodes()) {
+                root.removeChild(root.firstChild);
+            }
+            var option0 = document.createElement('option');
+            option0.value = "0";
+            option0.innerHTML= "any";
+            root.appendChild(option0);
+
+            data.map((item) => {
+                if (item.manufacturer_id == id) {
+                    var option = document.createElement('option');
+                    option.value=item.id;
+                    option.innerHTML=item.name;
+                    root.appendChild(option);
+                }
+
+            });
+        }
+    }
+
+
+</script>
 </body>

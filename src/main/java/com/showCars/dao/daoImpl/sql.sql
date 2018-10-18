@@ -1,1 +1,3 @@
-SELECT * from heroku_555437bd0a94962.record;
+SELECT * FROM Ad where price >= :minPriceQuery and price <= :maxPriceQuery
+                            and year >= :minYearQuery and year <= :maxYearQuery and make = :make and model = :model
+order by id desc

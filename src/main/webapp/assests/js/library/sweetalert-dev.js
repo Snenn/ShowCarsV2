@@ -347,7 +347,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _utils = require('./utils');
+var _utils = require('./../utils');
 
 var _handleSwalDom = require('./handle-swal-dom');
 
@@ -740,7 +740,7 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _utils = require('./utils');
+var _utils = require('./../utils');
 
 var _handleDom = require('./handle-dom');
 
@@ -941,7 +941,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _utils = require('./utils');
+var _utils = require('./../utils');
 
 var _handleSwalDom = require('./handle-swal-dom');
 

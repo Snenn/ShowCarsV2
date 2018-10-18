@@ -17,12 +17,12 @@
 <body>
 <script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
-<script src="../../assests/js/react.js"></script>
-<script src="../../assests/js/react-dom.js"></script>
-<script src="../../assests/js/browser.min.js"></script>
-<script src="../../assests/js/EventEmitter.js"></script>
-<script src="../../assests/js/sweetalert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../../assests/js/sweetalert.css">
+<script src="../../assests/js/library/react.js"></script>
+<script src="../../assests/js/library/react-dom.js"></script>
+<script src="../../assests/js/library/browser.min.js"></script>
+<script src="../../assests/js/library/EventEmitter.js"></script>
+<script src="../../assests/js/library/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../assests/js/library/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="../../assests/css/spa.css" media="all">
 
 <p class="message"><a href="/user">Go back</a></p>
@@ -55,6 +55,15 @@
 </form>
 
 <script>
+
+    year.oncut = year.oncopy = year.onpaste = function(event) {
+        return false;
+    };
+
+    price.oncut = price.oncopy = price.onpaste = function(event) {
+        return false;
+    };
+
     function checkNumbers(e) {
 
         e = e || event;

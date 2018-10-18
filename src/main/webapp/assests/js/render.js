@@ -33,9 +33,18 @@ var MainRender = React.createClass({
             var maxYear = document.getElementById("maxYear");
             var minPrice = document.getElementById("minPrice");
             var maxPrice = document.getElementById("maxPrice");
+            var selectMake = document.getElementById("selectMake");
+            var make = selectMake.options[selectMake.selectedIndex].innerHTML;
+            var selectModel = document.getElementById("selectModel");
+            var model = selectModel.options[selectModel.selectedIndex].innerHTML;
+
             var req = new XMLHttpRequest();
             req.responseType = 'json';
-            var url = 'https://showcarsv2.herokuapp.com/adsFilters?minYear=' + minYear.value + '&maxYear=' + maxYear.value + '&minPrice=' + minPrice.value + '&maxPrice=' + maxPrice.value;
+            // var url = 'https://showcarsv2.herokuapp.com/adsFilters?minYear=' + minYear.value +
+            //     +'&maxYear=' + maxYear.value + '&minPrice=' + minPrice.value + '&maxPrice=' + maxPrice.value+'$make='+make+'$model='+model;
+            var url = 'http://localhost:8080/adsFilters?minYear=' + minYear.value+
+                '&maxYear=' + maxYear.value + '&minPrice=' + minPrice.value + '&maxPrice='+
+                maxPrice.value+'&make='+make+'&model='+model;
             req.open('GET', url, true);
             req.send();
             var json;

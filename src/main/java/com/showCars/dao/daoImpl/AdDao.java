@@ -26,7 +26,8 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
     }
 
     @Override
-    public List<Ad> getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice) throws Exception {
+    public List<Ad> getAllWithFilters(String minYear, String maxYear, String minPrice, String maxPrice, String make, String model) throws Exception {
+
         int minYearQuery = 0;
         int maxYearQuery = 2050;
         int minPriceQuery = 0;
@@ -46,16 +47,36 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
         }
 
         List ads = null;
+        String sql = "";
+        logger.error("sql : "+sql);
+        if (model.equals("any")) {
+            if (make.equals("any")) {
+                sql = "FROM Ad where price >= :minPriceQuery and price <= :maxPriceQuery " +
+                        "and year >= :minYearQuery and year <= :maxYearQuery order by id desc ";
+            } else {
+                sql = "FROM Ad where price >= :minPriceQuery and price <= :maxPriceQuery " +
+                        "and year >= :minYearQuery and year <= :maxYearQuery and make = :make order by id desc ";
+            }
+        } else {
+            sql = "FROM Ad where price >= :minPriceQuery and price <= :maxPriceQuery " +
+                    "and year >= :minYearQuery and year <= :maxYearQuery and make = :make and model = :model order by id desc ";
+        }
+
         try {
-            Query query = getSession().createQuery("FROM Ad where price >= :minPriceQuery and price <= :maxPriceQuery " +
-                    "and year >= :minYearQuery and year <= :maxYearQuery order by id desc ");
+            Query query = getSession().createQuery(sql);
             query.setParameter("minPriceQuery", minPriceQuery);
             query.setParameter("maxPriceQuery", maxPriceQuery);
             query.setParameter("minYearQuery", minYearQuery);
             query.setParameter("maxYearQuery", maxYearQuery);
+            if (!make.equals("any")) {
+                query.setParameter("make", make);
+            }
+            if (!model.equals("any")) {
+                query.setParameter("model", model);
+            }
             ads = query.list();
         } catch (HibernateException e) {
-            logger.error("Exception in getAllWithFilters, "+e);
+            logger.error("Exception in getAllWithFilters, " + e);
             throw new Exception();
         }
         return ads;
@@ -68,7 +89,7 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
             Query query = getSession().createQuery("FROM Ad");
             ads = query.list();
         } catch (HibernateException e) {
-            logger.error("Exception in getAllAd, "+e);
+            logger.error("Exception in getAllAd, " + e);
             throw new Exception();
         }
         return ads;
@@ -82,7 +103,7 @@ public class AdDao extends Dao<Ad> implements IAdDao<Ad> {
             query.setParameter("id", id);
             ads = query.list();
         } catch (HibernateException e) {
-            logger.error("Exception in getMyAd, "+e);
+            logger.error("Exception in getMyAd, " + e);
             throw new Exception();
         }
         return ads;

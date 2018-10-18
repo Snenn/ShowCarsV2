@@ -34,17 +34,6 @@ public class Ad {
     @Column
     private String description;
 
-
-    public Ad(User user, String photo, int price, String make, String model, int year, String description) {
-        this.user = user;
-        this.photo = photo;
-        this.price = price;
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.description = description;
-    }
-
     public Ad() {
     }
 
@@ -109,6 +98,16 @@ public class Ad {
     }
 
     public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Ad(User user, String photo, int price, String make, String model, int year, String description) {
+        this.user = user;
+        this.photo = photo;
+        this.price = price;
+        this.make = make;
+        this.model = model;
+        this.year = year;
         this.description = description;
     }
 }
