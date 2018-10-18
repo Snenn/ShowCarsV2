@@ -184,7 +184,7 @@
 
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        var url = 'http://localhost:8080/getModels';
+        var url = 'https://showcarsv2.herokuapp.com/getModels';
         req.open('GET', url, true);
         req.send();
         var json;
