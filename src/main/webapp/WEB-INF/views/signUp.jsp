@@ -11,6 +11,10 @@
     <title>Title</title>
 </head>
 <body>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
 <script src="../../assests/js/library/browser.min.js"></script>
 <script src="../../assests/js/library/sweetalert.min.js"></script>
