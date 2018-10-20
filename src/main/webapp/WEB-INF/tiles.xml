@@ -9,6 +9,8 @@
 
     <definition name="createAd" template="/WEB-INF/views/createAd.jsp"/>
 
+    <definition name="createAdDone" template="/WEB-INF/views/createAdDone.jsp"/>
+
     <definition name="user" template="/WEB-INF/views/user.jsp"/>
 
     <definition name="showCars" template="/WEB-INF/views/responseServlet.jsp"/>

@@ -125,13 +125,11 @@ public class HomeController implements Serializable {
         modelMap.addAttribute("message", "");
         try {
             adService.saveOrUpdate(user, make, model, price, year, description, photo);
-            modelMap.addAttribute("message", "Ad had been saved");
         } catch (Exception e) {
             logger.error("Ad had not been saved");
-            modelMap.addAttribute("message", "ad had not been saved");
         }
 
-        return "createAd";
+        return "createAdDone";
     }
 
     @RequestMapping(value = {"/signUp"}, method = {RequestMethod.POST, RequestMethod.GET})

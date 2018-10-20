@@ -1,43 +1,6 @@
 "use strict"
 window.ee = new EventEmitter();
 
-function saveAd (event) {
-
-    var ad = {
-        make: '',
-        model: '',
-        year: '',
-        price: '',
-        description: '',
-
-    };
-    ad.make = document.getElementById("make");
-    ad.model = document.getElementById("model");
-    ad.year = document.getElementById("year");
-    ad.price = document.getElementById("price");
-    ad.description = document.getElementById("description");
-
-
-    var jsonSend = JSON.stringify(ad);
-    alert("this JSON will be send: " + jsonSend);
-    var req = new XMLHttpRequest();
-    req.responseType = 'json';
-    var url = 'http://localhost:8080/grid';
-    req.open('POST', url, true);
-    req.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    var jsonResp;
-    req.send(jsonSend);
-    req.onreadystatechange = function () {
-        if (req.readyState === 4 && req.status === 200) {
-            jsonResp = req.response;
-        }
-    }
-
-
-}
-
-
-
 var MyAds = React.createClass({
 
     getInitialState: function () {

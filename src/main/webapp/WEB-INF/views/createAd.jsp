@@ -33,7 +33,7 @@
                 <div>make</div>
                 <select style="width: 90%; height: 10%" id="make" name="make" onchange="changeFunc();">
                     <c:forEach items="${manufacturers}" var="manufacturer">
-                        <option value="${manufacturer.name}">${manufacturer.name}</option>
+                        <option value="${manufacturer.name}" label="${manufacturer.id}">${manufacturer.name}</option>
                     </c:forEach>
                 </select>
             </div>
@@ -59,8 +59,6 @@
         <div>
             <button class="btn" type="submit">save Ad</button>
         </div>
-        <br><br>
-        ${message}
 
     </div>
 </form>
@@ -109,8 +107,7 @@
 
     function changeFunc() {
         var selectBox = document.getElementById("make");
-        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-
+        var selectedValue = selectBox.options[selectBox.selectedIndex].label;
         var req = new XMLHttpRequest();
         req.responseType = 'json';
 //        var url = 'http://localhost:8080/getModels';
@@ -126,7 +123,7 @@
         }
 
 
-        function writeOptions(data, name) {
+        function writeOptions(data, id) {
 
             var root = document.getElementById("model");
             while (root.hasChildNodes()) {
@@ -134,9 +131,9 @@
             }
 
             data.map((item) => {
-                if (item.name == name) {
+                if (item.manufacturer_id == id) {
                     var option = document.createElement('option');
-                    option.value=item.id;
+                    option.value=item.name;
                     option.innerHTML=item.name;
                     root.appendChild(option);
                 }
