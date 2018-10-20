@@ -15,8 +15,7 @@
 </head>
 
 <body>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
 <script src="../../assests/js/library/react.js"></script>
 <script src="../../assests/js/library/react-dom.js"></script>
@@ -36,7 +35,7 @@
                 <div>make</div>
                 <select style="width: 90%; height: 10%" id="make" name="make" onchange="changeFunc();">
                     <c:forEach items="${manufacturers}" var="manufacturer">
-                        <option value="${manufacturer.id}">${manufacturer.name}</option>
+                        <option value="${manufacturer.name}">${manufacturer.name}</option>
                     </c:forEach>
                 </select>
             </div>
@@ -44,7 +43,7 @@
                 <div>model</div>
                 <select style="width: 90%; height: 10%" id="model" name="model">
                     <c:forEach items="${models}" var="model">
-                        <option value="${model.id}">${model.name}</option>
+                        <option value="${model.name}">${model.name}</option>
                     </c:forEach>
                 </select>
             </div>
