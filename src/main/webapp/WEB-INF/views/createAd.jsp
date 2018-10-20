@@ -33,7 +33,7 @@
         <div class="ad1">
             <div>
                 <div>make</div>
-                <select id="selectMake" onchange="changeFunc();">
+                <select style="width: 90%; height: 10%" id="selectMake" onchange="changeFunc();">
                     <c:forEach items="${manufacturers}" var="manufacturer">
                         <option value="${manufacturer.id}">${manufacturer.name}</option>
                     </c:forEach>
@@ -41,16 +41,16 @@
             </div>
             <div>
                 <div>model</div>
-                <select id="selectModel">
+                <select style="width: 90%; height: 10%" id="selectModel">
                     <c:forEach items="${models}" var="model">
                         <option value="${model.id}">${model.name}</option>
                     </c:forEach>
                 </select>
             </div>
             <div>year</div>
-            <input type="text" id="year" name="year" onkeypress="return checkNumbers()">
+            <input style="width: 90%; height: 10%" type="text" id="year" name="year" onkeypress="return checkNumbers()">
             <div>price</div>
-            <input type="text" id="price" name="price" onkeypress="return checkNumbers()">
+            <input style="width: 90%; height: 10%" type="text" id="price" name="price" onkeypress="return checkNumbers()">
         </div>
         <div class="ad2">
             <div>description</div>
