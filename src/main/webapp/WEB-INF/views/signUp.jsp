@@ -3,8 +3,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="e" uri="http://www.springframework.org/tags" %>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../../assests/css/formLogin.css">
-<html>
+<meta name="viewport" content="width=device-width">
 <head>
     <title>Title</title>
 </head>
@@ -71,7 +73,6 @@
 </script>
 
 </body>
-</html>
 
 
 

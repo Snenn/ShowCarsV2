@@ -4,7 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="e" uri="http://www.springframework.org/tags" %>
-
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <meta name="viewport" content="width=device-width">
 <head>
