@@ -12,6 +12,9 @@
 </head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
+<script src="../../assests/js/library/browser.min.js"></script>
+<script src="../../assests/js/library/sweetalert.min.js"></script>
+<script src="../../assests/js/library/EventEmitter.js"></script>
 <div style="margin: 10% 35%; width: 40%; height: 30%;">
     <div style="width: 100%; height: 15%; margin-left: 10%; color: red">${jsp_message}</div>
     <s:form class="login-form" id="registrationForm" action="/signUp/reg" modelAttribute="userForm" method="post"
