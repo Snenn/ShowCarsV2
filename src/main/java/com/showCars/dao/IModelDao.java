@@ -7,4 +7,6 @@ public interface IModelDao <TYPE> extends IDao<TYPE> {
 
     List<TYPE> getAll() throws Exception;
 
+    List<TYPE> getModelsByFirstManufacturers() throws Exception;
+
 }

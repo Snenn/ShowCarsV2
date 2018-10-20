@@ -28,13 +28,25 @@
 <p class="message"><a href="/user">Go back</a></p>
 
 <form id="createAdForm" action="/user/createAdToBase?${_csrf.parameterName}=${_csrf.token}" method="post"
-        encType="multipart/form-data">
+      encType="multipart/form-data">
     <div class="createAd">
         <div class="ad1">
-            <div>make</div>
-            <input type="text" id="make" name="make" >
-            <div>model</div>
-            <input type="text" id="model" name="model">
+            <div>
+                <div>make</div>
+                <select id="selectMake" onchange="changeFunc();">
+                    <c:forEach items="${manufacturers}" var="manufacturer">
+                        <option value="${manufacturer.id}">${manufacturer.name}</option>
+                    </c:forEach>
+                </select>
+            </div>
+            <div>
+                <div>model</div>
+                <select id="selectModel">
+                    <c:forEach items="${models}" var="model">
+                        <option value="${model.id}">${model.name}</option>
+                    </c:forEach>
+                </select>
+            </div>
             <div>year</div>
             <input type="text" id="year" name="year" onkeypress="return checkNumbers()">
             <div>price</div>
@@ -42,7 +54,8 @@
         </div>
         <div class="ad2">
             <div>description</div>
-            <textarea rows="6" type="text" id="description" name="description" class='inputAdDesc'></textarea>
+            <textarea rows="6" type="text" id="description" name="description" class='inputAdDesc'
+                      maxlength="200"></textarea>
             <input type="file" accept="image/*" id="photo" name="photo" value="choose image">
         </div>
         <div>
@@ -56,11 +69,11 @@
 
 <script>
 
-    year.oncut = year.oncopy = year.onpaste = function(event) {
+    year.oncut = year.oncopy = year.onpaste = function (event) {
         return false;
     };
 
-    price.oncut = price.oncopy = price.onpaste = function(event) {
+    price.oncut = price.oncopy = price.onpaste = function (event) {
         return false;
     };
 
@@ -94,6 +107,44 @@
         }
 
         return null; // специальная клавиша
+    }
+
+    function changeFunc() {
+        var selectBox = document.getElementById("selectMake");
+        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+//        var url = 'http://localhost:8080/getModels';
+        var url = 'https://showcarsv2.herokuapp.com/getModels';
+        req.open('GET', url, true);
+        req.send();
+        var json;
+        req.onreadystatechange = function () {
+            if (req.readyState === 4 && req.status === 200) {
+                json = req.response;
+                writeOptions(json, selectedValue);
+            }
+        }
+
+
+        function writeOptions(data, id) {
+
+            var root = document.getElementById("selectModel");
+            while (root.hasChildNodes()) {
+                root.removeChild(root.firstChild);
+            }
+
+            data.map((item) => {
+                if (item.manufacturer_id == id) {
+                    var option = document.createElement('option');
+                    option.value=item.id;
+                    option.innerHTML=item.name;
+                    root.appendChild(option);
+                }
+
+            });
+        }
     }
 </script>
 </body>

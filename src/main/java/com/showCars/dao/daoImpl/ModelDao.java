@@ -1,6 +1,7 @@
 package com.showCars.dao.daoImpl;
 
 import com.showCars.dao.IModelDao;
+import com.showCars.pojos.Manufacturer;
 import com.showCars.pojos.Model;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
@@ -28,6 +29,25 @@ public class ModelDao extends Dao<Model> implements IModelDao<Model> {
         List models = null;
         try {
             Query query = getSession().createQuery("FROM Model order by name");
+            models = query.list();
+            logger.info("all models:" + models);
+        } catch (HibernateException e) {
+            logger.error("Error get models" + e);
+            throw new Exception("Exception in ModelDao getAll,  "+e);
+        }
+        return models;
+    }
+
+    @Override
+    public List<Model> getModelsByFirstManufacturers() throws Exception {
+        List models = null;
+
+        try {
+            Query query1 = getSession().createQuery("FROM Manufacturer order by name");
+            query1.setMaxResults (1);
+            Manufacturer manufacturer = (Manufacturer) query1.uniqueResult();
+            Query query = getSession().createQuery("FROM Model where manufacturer_id=:idM  order by name");
+            query.setParameter("idM", manufacturer.getId());
             models = query.list();
             logger.info("all models:" + models);
         } catch (HibernateException e) {

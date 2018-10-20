@@ -19,4 +19,9 @@ public class ModelService implements IModelService {
     public List getAll() throws Exception {
         return modelDao.getAll();
     }
+
+    @Override
+    public List getModelsByFirstManufacturers() throws Exception {
+        return modelDao.getModelsByFirstManufacturers();
+    }
 }

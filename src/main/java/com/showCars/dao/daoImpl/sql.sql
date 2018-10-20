@@ -1,3 +1,1 @@
-SELECT * FROM Ad where price >= :minPriceQuery and price <= :maxPriceQuery
-                            and year >= :minYearQuery and year <= :maxYearQuery and make = :make and model = :model
-order by id desc
+select * FROM model where model.manufacturer_id = (SELECT id FROM manufacturer order by name LIMIT 1) order by name;

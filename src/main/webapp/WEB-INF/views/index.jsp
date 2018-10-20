@@ -176,8 +176,7 @@
 
         return null; // специальная клавиша
     }
-</script>
-<script>
+
     function changeFunc() {
         var selectBox = document.getElementById("selectMake");
         var selectedValue = selectBox.options[selectBox.selectedIndex].value;

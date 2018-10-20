@@ -142,4 +142,13 @@ public class REST {
         return json;
 
     }
+
+    @RequestMapping(value = "checkLogin", method = RequestMethod.GET)
+    public String checkLogin(String login) {
+        User user = userService.findByLogin(login);
+        if (user == null) {
+            return "true";
+        } else return "false";
+
+    }
 }

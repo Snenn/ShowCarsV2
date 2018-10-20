@@ -7,4 +7,6 @@ public interface IModelService {
 
     List getAll() throws Exception;
 
+    List getModelsByFirstManufacturers() throws Exception;
+
 }

@@ -3,10 +3,7 @@ package com.showCars.controller;
 import com.showCars.pojos.Record;
 import com.showCars.pojos.User;
 import com.showCars.pojos.UserRole;
-import com.showCars.services.IAdService;
-import com.showCars.services.IManufacturerService;
-import com.showCars.services.IRecordService;
-import com.showCars.services.IUserService;
+import com.showCars.services.*;
 import com.showCars.util.Util;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +29,8 @@ public class HomeController implements Serializable {
     private Logger logger = Logger.getLogger(HomeController.class);
 
     @Autowired
+    private IModelService modelService;
+    @Autowired
     private IUserService userService;
     @Autowired
     private IRecordService recordService;
@@ -47,7 +46,7 @@ public class HomeController implements Serializable {
         User user = userService.findByLogin(Util.getPrincipal());
         List manufacturers = null;
         if (user != null) {
-            modelMap.addAttribute("userName", user.getName() + " " + user.getSurname());
+            modelMap.addAttribute("userName", user.getName());
             modelMap.addAttribute("userRole", user.getUserRole().getNameRoleUser());
             try {
                 recordService.saveOrUpdate(new Record(user.getId(), user.getName(), Calendar.getInstance().getTime()));
@@ -104,12 +103,15 @@ public class HomeController implements Serializable {
     @RequestMapping(value = {"/user/createAd"}, method = {RequestMethod.POST, RequestMethod.GET})
     public String createAd(ModelMap modelMap) {
         List manufacturers = null;
+        List models = null;
         try {
+            models = modelService.getModelsByFirstManufacturers();
             manufacturers = manufacturerService.getAll();
+            modelMap.addAttribute("models", models);
+            modelMap.addAttribute("manufacturers", manufacturers);
         } catch (Exception e) {
-            logger.error("/user/createAd - Exception in get manufacturers, " + e);
+            logger.error("Exception in get manufacturers, " + e);
         }
-        modelMap.addAttribute("manufacturers", manufacturers);
         return "createAd";
     }
 

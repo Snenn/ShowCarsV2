@@ -31,19 +31,13 @@
             <c:otherwise>
                 <div style="margin: 5% 5%;">
                     <div style="float: left; width: 70%; height: 80%;">
-                        <div style="text-align: center; width: 100%; margin-top: 3%">Hi, ${userName}</div>
+                        <div style="width: 100%; margin-top: 3%; margin-left: 20%">Hi, ${userName}</div>
 
                         <div>
                             <c:url var="logoutUrl" value="/logout"/>
-                            <form action="${logoutUrl}"
-                                  method="post" class="login-form">
-
-                                <button class="btn" type="submit"
-                                        value="Log out"> Logout
-                                </button>
-                                <input type="hidden"
-                                       name="${_csrf.parameterName}"
-                                       value="${_csrf.token}"/>
+                            <form action="${logoutUrl}" method="post" class="login-form">
+                                <button class="btn" type="submit">Logout</button>
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                             </form>
                         </div>
 
