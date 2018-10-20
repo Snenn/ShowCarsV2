@@ -3,14 +3,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
 <link rel="stylesheet" type="text/css" href="../../assests/css/formLogin.css">
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
+<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
 <div style="margin: 10% 35%; width: 40%; height: 30%;">
     <div style="width: 100%; height: 15%; margin-left: 10%; color: red">${jsp_message}</div>
     <s:form class="login-form" id="registrationForm" action="/signUp/reg" modelAttribute="userForm" method="post"
