@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
 <script src="../../assests/js/library/react.js"></script>
 <script src="../../assests/js/library/react-dom.js"></script>
