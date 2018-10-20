@@ -11,11 +11,10 @@
 <meta name="viewport" content="width=device-width">
 <head>
     <title>Pre-owned cars</title>
-    <link rel="shortcut icon" href="../../assests/pictures/logo.png"/>
 </head>
 
 <body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
 <script src="../../assests/js/library/react.js"></script>
 <script src="../../assests/js/library/react-dom.js"></script>

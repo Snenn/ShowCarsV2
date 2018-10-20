@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <meta name="viewport" content="width=device-width">
 <head>
-    <%--<style>body { background:url("../../resourses/images/homeBackground.jpg")}    </style>--%>
     <style>body {
         background: whitesmoke;
     )
