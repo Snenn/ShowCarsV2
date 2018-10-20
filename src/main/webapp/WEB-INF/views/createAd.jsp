@@ -126,7 +126,7 @@
         }
 
 
-        function writeOptions(data, id) {
+        function writeOptions(data, name) {
 
             var root = document.getElementById("model");
             while (root.hasChildNodes()) {
@@ -134,7 +134,7 @@
             }
 
             data.map((item) => {
-                if (item.manufacturer_id == id) {
+                if (item.name == name) {
                     var option = document.createElement('option');
                     option.value=item.id;
                     option.innerHTML=item.name;
